@@ -1,0 +1,2429 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "product_imagery_set",
+        "label": "Product imagery set",
+        "nodes": [
+          "img_01_58",
+          "img_02_59",
+          "img_03_60",
+          "img_04_61",
+          "img_05_62"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.9,
+        "source_file": "review-images\\manifest.json"
+      },
+      {
+        "id": "resource_media_set",
+        "label": "Resource media set",
+        "nodes": [
+          "img_06_business_video_call_laptop_1024x683",
+          "img_08_screenshot_2025_07_19_112807_1024x574",
+          "img_09_screenshot_2025_07_19_113048",
+          "img_10_screenshot_2025_07_19_113200",
+          "img_11_screenshot_2025_07_21_184542"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.9,
+        "source_file": "review-images\\manifest.json"
+      },
+      {
+        "id": "brand_and_contact_set",
+        "label": "Brand and contact imagery set",
+        "nodes": [
+          "img_07_classone_logo",
+          "img_12_whatsapp_image_2025_07_22_at_12_07_37_pm_e1760390529261",
+          "img_13_palmsens_canva",
+          "img_14_whatsapp_image_2025_12_15_at_3_46_45_pm"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.9,
+        "source_file": "review-images\\manifest.json"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "id": "package_json",
+      "community": 2,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "id": "classone_package_name",
+      "community": 2,
+      "norm_label": "name"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "id": "classone_package_version",
+      "community": 2,
+      "norm_label": "version"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "id": "classone_package_private",
+      "community": 2,
+      "norm_label": "private"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "id": "classone_package_type",
+      "community": 2,
+      "norm_label": "type"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "id": "classone_package_scripts",
+      "community": 2,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "id": "classone_package_scripts_dev",
+      "community": 2,
+      "norm_label": "dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "id": "classone_package_scripts_build",
+      "community": 2,
+      "norm_label": "build"
+    },
+    {
+      "label": "preview",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "id": "classone_package_scripts_preview",
+      "community": 2,
+      "norm_label": "preview"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "id": "classone_package_dependencies",
+      "community": 2,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "id": "classone_package_dependencies_react",
+      "community": 2,
+      "norm_label": "react"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "id": "classone_package_dependencies_react_dom",
+      "community": 2,
+      "norm_label": "react-dom"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "id": "classone_package_devdependencies",
+      "community": 2,
+      "norm_label": "devdependencies"
+    },
+    {
+      "label": "vite",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "id": "classone_package_devdependencies_vite",
+      "community": 2,
+      "norm_label": "vite"
+    },
+    {
+      "label": "vite.config.js",
+      "file_type": "code",
+      "source_file": "vite.config.js",
+      "source_location": "L1",
+      "id": "vite_config_js",
+      "community": 9,
+      "norm_label": "vite.config.js"
+    },
+    {
+      "label": "manifest.json",
+      "file_type": "code",
+      "source_file": "review-images/manifest.json",
+      "source_location": "L1",
+      "id": "review_images_manifest_json",
+      "community": 10,
+      "norm_label": "manifest.json"
+    },
+    {
+      "label": "App.jsx",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L1",
+      "id": "src_app_jsx",
+      "community": 0,
+      "norm_label": "app.jsx"
+    },
+    {
+      "label": "normalizePath()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L28",
+      "id": "src_app_normalizepath",
+      "community": 4,
+      "norm_label": "normalizepath()"
+    },
+    {
+      "label": "capitalizeSlug()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L37",
+      "id": "src_app_capitalizeslug",
+      "community": 4,
+      "norm_label": "capitalizeslug()"
+    },
+    {
+      "label": "findByAlias()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L45",
+      "id": "src_app_findbyalias",
+      "community": 4,
+      "norm_label": "findbyalias()"
+    },
+    {
+      "label": "createAvatar()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L49",
+      "id": "src_app_createavatar",
+      "community": 0,
+      "norm_label": "createavatar()"
+    },
+    {
+      "label": "isExternalHref()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L59",
+      "id": "src_app_isexternalhref",
+      "community": 0,
+      "norm_label": "isexternalhref()"
+    },
+    {
+      "label": "AppLink()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L63",
+      "id": "src_app_applink",
+      "community": 0,
+      "norm_label": "applink()"
+    },
+    {
+      "label": "BrandMark()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L85",
+      "id": "src_app_brandmark",
+      "community": 0,
+      "norm_label": "brandmark()"
+    },
+    {
+      "label": "PlaceholderPanel()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L91",
+      "id": "src_app_placeholderpanel",
+      "community": 0,
+      "norm_label": "placeholderpanel()"
+    },
+    {
+      "label": "SectionHeading()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L108",
+      "id": "src_app_sectionheading",
+      "community": 0,
+      "norm_label": "sectionheading()"
+    },
+    {
+      "label": "Rail()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L118",
+      "id": "src_app_rail",
+      "community": 0,
+      "norm_label": "rail()"
+    },
+    {
+      "label": "Header()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L146",
+      "id": "src_app_header",
+      "community": 4,
+      "norm_label": "header()"
+    },
+    {
+      "label": "PromoModal()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L395",
+      "id": "src_app_promomodal",
+      "community": 0,
+      "norm_label": "promomodal()"
+    },
+    {
+      "label": "SearchModal()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L433",
+      "id": "src_app_searchmodal",
+      "community": 0,
+      "norm_label": "searchmodal()"
+    },
+    {
+      "label": "HomeHero()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L511",
+      "id": "src_app_homehero",
+      "community": 0,
+      "norm_label": "homehero()"
+    },
+    {
+      "label": "HomePage()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L582",
+      "id": "src_app_homepage",
+      "community": 0,
+      "norm_label": "homepage()"
+    },
+    {
+      "label": "DetailBanner()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L744",
+      "id": "src_app_detailbanner",
+      "community": 0,
+      "norm_label": "detailbanner()"
+    },
+    {
+      "label": "AboutPage()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L759",
+      "id": "src_app_aboutpage",
+      "community": 0,
+      "norm_label": "aboutpage()"
+    },
+    {
+      "label": "SoftwarePage()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L816",
+      "id": "src_app_softwarepage",
+      "community": 0,
+      "norm_label": "softwarepage()"
+    },
+    {
+      "label": "ResourcesPage()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L847",
+      "id": "src_app_resourcespage",
+      "community": 0,
+      "norm_label": "resourcespage()"
+    },
+    {
+      "label": "ApplicationsPage()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L871",
+      "id": "src_app_applicationspage",
+      "community": 0,
+      "norm_label": "applicationspage()"
+    },
+    {
+      "label": "NewsPage()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L909",
+      "id": "src_app_newspage",
+      "community": 0,
+      "norm_label": "newspage()"
+    },
+    {
+      "label": "ContactPage()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L926",
+      "id": "src_app_contactpage",
+      "community": 0,
+      "norm_label": "contactpage()"
+    },
+    {
+      "label": "BatteriesPage()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L946",
+      "id": "src_app_batteriespage",
+      "community": 0,
+      "norm_label": "batteriespage()"
+    },
+    {
+      "label": "ProductPage()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L972",
+      "id": "src_app_productpage",
+      "community": 0,
+      "norm_label": "productpage()"
+    },
+    {
+      "label": "SoftwareDetailPage()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L1008",
+      "id": "src_app_softwaredetailpage",
+      "community": 0,
+      "norm_label": "softwaredetailpage()"
+    },
+    {
+      "label": "GenericRoutePage()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L1036",
+      "id": "src_app_genericroutepage",
+      "community": 0,
+      "norm_label": "genericroutepage()"
+    },
+    {
+      "label": "Footer()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L1051",
+      "id": "src_app_footer",
+      "community": 0,
+      "norm_label": "footer()"
+    },
+    {
+      "label": "FloatingContact()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L1131",
+      "id": "src_app_floatingcontact",
+      "community": 0,
+      "norm_label": "floatingcontact()"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L1144",
+      "id": "src_app_app",
+      "community": 4,
+      "norm_label": "app()"
+    },
+    {
+      "label": "resolveRoute()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L1222",
+      "id": "src_app_resolveroute",
+      "community": 4,
+      "norm_label": "resolveroute()"
+    },
+    {
+      "label": "data.js",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L1",
+      "id": "src_data_js",
+      "community": 1,
+      "norm_label": "data.js"
+    },
+    {
+      "label": "contact",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L1",
+      "id": "src_data_contact",
+      "community": 3,
+      "norm_label": "contact"
+    },
+    {
+      "label": "imageAssets",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L9",
+      "id": "src_data_imageassets",
+      "community": 1,
+      "norm_label": "imageassets"
+    },
+    {
+      "label": "topStripLinks",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L26",
+      "id": "src_data_topstriplinks",
+      "community": 1,
+      "norm_label": "topstriplinks"
+    },
+    {
+      "label": "mainNavLinks",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L31",
+      "id": "src_data_mainnavlinks",
+      "community": 1,
+      "norm_label": "mainnavlinks"
+    },
+    {
+      "label": "homeSlides",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L104",
+      "id": "src_data_homeslides",
+      "community": 8,
+      "norm_label": "homeslides"
+    },
+    {
+      "label": "productCatalog",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L206",
+      "id": "src_data_productcatalog",
+      "community": 5,
+      "norm_label": "productcatalog"
+    },
+    {
+      "label": "softwareDetailCatalog",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L352",
+      "id": "src_data_softwaredetailcatalog",
+      "community": 3,
+      "norm_label": "softwaredetailcatalog"
+    },
+    {
+      "label": "expertisePoints",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L421",
+      "id": "src_data_expertisepoints",
+      "community": 1,
+      "norm_label": "expertisepoints"
+    },
+    {
+      "label": "aboutTeam",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L430",
+      "id": "src_data_aboutteam",
+      "community": 1,
+      "norm_label": "aboutteam"
+    },
+    {
+      "label": "biosensorAreas",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L437",
+      "id": "src_data_biosensorareas",
+      "community": 1,
+      "norm_label": "biosensorareas"
+    },
+    {
+      "label": "biosensorProducts",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L446",
+      "id": "src_data_biosensorproducts",
+      "community": 1,
+      "norm_label": "biosensorproducts"
+    },
+    {
+      "label": "businessSegments",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L454",
+      "id": "src_data_businesssegments",
+      "community": 1,
+      "norm_label": "businesssegments"
+    },
+    {
+      "label": "newestInnovations",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L461",
+      "id": "src_data_newestinnovations",
+      "community": 1,
+      "norm_label": "newestinnovations"
+    },
+    {
+      "label": "testimonials",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L468",
+      "id": "src_data_testimonials",
+      "community": 1,
+      "norm_label": "testimonials"
+    },
+    {
+      "label": "certificateSlides",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L474",
+      "id": "src_data_certificateslides",
+      "community": 1,
+      "norm_label": "certificateslides"
+    },
+    {
+      "label": "clientBadges",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L480",
+      "id": "src_data_clientbadges",
+      "community": 1,
+      "norm_label": "clientbadges"
+    },
+    {
+      "label": "softwareCards",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L489",
+      "id": "src_data_softwarecards",
+      "community": 1,
+      "norm_label": "softwarecards"
+    },
+    {
+      "label": "resourceCards",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L496",
+      "id": "src_data_resourcecards",
+      "community": 6,
+      "norm_label": "resourcecards"
+    },
+    {
+      "label": "applicationCards",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L503",
+      "id": "src_data_applicationcards",
+      "community": 1,
+      "norm_label": "applicationcards"
+    },
+    {
+      "label": "searchIndex",
+      "file_type": "code",
+      "source_file": "src/data.js",
+      "source_location": "L510",
+      "id": "src_data_searchindex",
+      "community": 1,
+      "norm_label": "searchindex"
+    },
+    {
+      "label": "main.jsx",
+      "file_type": "code",
+      "source_file": "src/main.jsx",
+      "source_location": "L1",
+      "id": "src_main_jsx",
+      "community": 7,
+      "norm_label": "main.jsx"
+    },
+    {
+      "label": "ClassOneSystem replica README",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "summary": "Local React + Vite replica with placeholder imagery and working local routes.",
+      "id": "readme_classone_replica",
+      "community": 1,
+      "norm_label": "classonesystem replica readme"
+    },
+    {
+      "label": "ClassOneSystem replica",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "A local React + Vite replica that preserves the live site layout, navigation, and routes while using placeholder imagery.",
+      "id": "classone_replica",
+      "community": 1,
+      "norm_label": "classonesystem replica"
+    },
+    {
+      "label": "Placeholder imagery",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Structured placeholder images stand in for the live site media while keeping the page hierarchy and visual rhythm intact.",
+      "id": "placeholder_imagery",
+      "community": 3,
+      "norm_label": "placeholder imagery"
+    },
+    {
+      "label": "PalmSens device image 58",
+      "file_type": "image",
+      "source_file": "review-images/01-58.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_01_58",
+      "community": 5,
+      "norm_label": "palmsens device image 58"
+    },
+    {
+      "label": "PalmSens device image 59",
+      "file_type": "image",
+      "source_file": "review-images/02-59.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_02_59",
+      "community": 5,
+      "norm_label": "palmsens device image 59"
+    },
+    {
+      "label": "PalmSens device image 60",
+      "file_type": "image",
+      "source_file": "review-images/03-60.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_03_60",
+      "community": 5,
+      "norm_label": "palmsens device image 60"
+    },
+    {
+      "label": "PalmSens device image 61",
+      "file_type": "image",
+      "source_file": "review-images/04-61.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_04_61",
+      "community": 5,
+      "norm_label": "palmsens device image 61"
+    },
+    {
+      "label": "PalmSens device image 62",
+      "file_type": "image",
+      "source_file": "review-images/05-62.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_05_62",
+      "community": 5,
+      "norm_label": "palmsens device image 62"
+    },
+    {
+      "label": "Remote demo and tutorial image",
+      "file_type": "image",
+      "source_file": "review-images/06-business-video-call-laptop-1024x683.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_06_business_video_call_laptop_1024x683",
+      "community": 6,
+      "norm_label": "remote demo and tutorial image"
+    },
+    {
+      "label": "Class One Systems logo",
+      "file_type": "image",
+      "source_file": "review-images/07-ClassOne-logo.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_07_classone_logo",
+      "community": 3,
+      "norm_label": "class one systems logo"
+    },
+    {
+      "label": "Webinar screenshot",
+      "file_type": "image",
+      "source_file": "review-images/08-Screenshot-2025-07-19-112807-1024x574.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_08_screenshot_2025_07_19_112807_1024x574",
+      "community": 6,
+      "norm_label": "webinar screenshot"
+    },
+    {
+      "label": "Unboxing screenshot",
+      "file_type": "image",
+      "source_file": "review-images/09-Screenshot-2025-07-19-113048.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_09_screenshot_2025_07_19_113048",
+      "community": 6,
+      "norm_label": "unboxing screenshot"
+    },
+    {
+      "label": "Product explainer screenshot",
+      "file_type": "image",
+      "source_file": "review-images/10-Screenshot-2025-07-19-113200.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_10_screenshot_2025_07_19_113200",
+      "community": 6,
+      "norm_label": "product explainer screenshot"
+    },
+    {
+      "label": "Software preview screenshot",
+      "file_type": "image",
+      "source_file": "review-images/11-Screenshot-2025-07-21-184542.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_11_screenshot_2025_07_21_184542",
+      "community": 3,
+      "norm_label": "software preview screenshot"
+    },
+    {
+      "label": "Director portrait",
+      "file_type": "image",
+      "source_file": "review-images/12-WhatsApp-Image-2025-07-22-at-12.07.37-PM-e1760390529261.jpeg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_12_whatsapp_image_2025_07_22_at_12_07_37_pm_e1760390529261",
+      "community": 3,
+      "norm_label": "director portrait"
+    },
+    {
+      "label": "PalmSens touch-screen device poster",
+      "file_type": "image",
+      "source_file": "review-images/13-palmsens-canva.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_13_palmsens_canva",
+      "community": 8,
+      "norm_label": "palmsens touch-screen device poster"
+    },
+    {
+      "label": "EmStat4T promotional poster",
+      "file_type": "image",
+      "source_file": "review-images/14-WhatsApp-Image-2025-12-15-at-3.46.45-PM.jpeg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_14_whatsapp_image_2025_12_15_at_3_46_45_pm",
+      "community": 3,
+      "norm_label": "emstat4t promotional poster"
+    },
+    {
+      "label": "Hero placeholder asset",
+      "file_type": "image",
+      "source_file": "src/assets/hero.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_hero",
+      "community": 8,
+      "norm_label": "hero placeholder asset"
+    },
+    {
+      "label": "JavaScript logo",
+      "file_type": "image",
+      "source_file": "src/assets/javascript.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_javascript",
+      "community": 7,
+      "norm_label": "javascript logo"
+    },
+    {
+      "label": "Vite logo",
+      "file_type": "image",
+      "source_file": "src/assets/vite.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_vite",
+      "community": 7,
+      "norm_label": "vite logo"
+    },
+    {
+      "label": "Site favicon",
+      "file_type": "image",
+      "source_file": "public/favicon.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_favicon",
+      "community": 3,
+      "norm_label": "site favicon"
+    },
+    {
+      "label": "Icon sprite",
+      "file_type": "image",
+      "source_file": "public/icons.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "img_icons",
+      "community": 3,
+      "norm_label": "icon sprite"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "classone_package_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "classone_package_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "classone_package_private",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "classone_package_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "classone_package_scripts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "classone_package_dependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "classone_package_devdependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "classone_package_scripts",
+      "target": "classone_package_scripts_dev",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "classone_package_scripts",
+      "target": "classone_package_scripts_build",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "classone_package_scripts",
+      "target": "classone_package_scripts_preview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "classone_package_dependencies",
+      "target": "classone_package_dependencies_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "classone_package_dependencies",
+      "target": "classone_package_dependencies_react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "classone_package_devdependencies",
+      "target": "classone_package_devdependencies_vite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_aboutteam",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_applicationcards",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_biosensorareas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_biosensorproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_businesssegments",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_certificateslides",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_clientbadges",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_contact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_expertisepoints",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_imageassets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_homeslides",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_mainnavlinks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_newestinnovations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_productcatalog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_resourcecards",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_searchindex",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_softwarecards",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_softwaredetailcatalog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_testimonials",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_topstriplinks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_normalizepath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_capitalizeslug",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_findbyalias",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_createavatar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_isexternalhref",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_applink",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_brandmark",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_placeholderpanel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_sectionheading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L118",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_rail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L146",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_header",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L395",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_promomodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L433",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_searchmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L511",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_homehero",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L582",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_homepage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L744",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_detailbanner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L759",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_aboutpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L816",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_softwarepage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L847",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_resourcespage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L871",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_applicationspage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L909",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_newspage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L926",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_contactpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L946",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_batteriespage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L972",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_productpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L1008",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_softwaredetailpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L1036",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_genericroutepage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L1051",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L1131",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_floatingcontact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L1144",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L1222",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_resolveroute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_main_jsx",
+      "target": "src_app_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "classone_replica",
+      "target": "src_app_jsx"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "review-images/07-ClassOne-logo.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_07_classone_logo",
+      "target": "src_app_jsx"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "review-images/14-WhatsApp-Image-2025-12-15-at-3.46.45-PM.jpeg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_14_whatsapp_image_2025_12_15_at_3_46_45_pm",
+      "target": "src_app_jsx"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.3,
+      "source_file": "public/favicon.svg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_favicon",
+      "target": "src_app_jsx"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.3,
+      "source_file": "public/icons.svg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_icons",
+      "target": "src_app_jsx"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L147",
+      "weight": 1.0,
+      "source": "src_app_header",
+      "target": "src_app_normalizepath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L1223",
+      "weight": 1.0,
+      "source": "src_app_resolveroute",
+      "target": "src_app_normalizepath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L1272",
+      "weight": 1.0,
+      "source": "src_app_resolveroute",
+      "target": "src_app_capitalizeslug",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L1261",
+      "weight": 1.0,
+      "source": "src_app_resolveroute",
+      "target": "src_app_findbyalias",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L1194",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "src_app_resolveroute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_contact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_imageassets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_topstriplinks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_mainnavlinks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_homeslides",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L206",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_productcatalog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L352",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_softwaredetailcatalog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L421",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_expertisepoints",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L430",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_aboutteam",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L437",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_biosensorareas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L446",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_biosensorproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L454",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_businesssegments",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L461",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_newestinnovations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L468",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_testimonials",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L474",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_certificateslides",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L480",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_clientbadges",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L489",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_softwarecards",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L496",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_resourcecards",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L503",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_applicationcards",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.js",
+      "source_location": "L510",
+      "weight": 1.0,
+      "source": "src_data_js",
+      "target": "src_data_searchindex",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "classone_replica",
+      "target": "src_data_js"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "placeholder_imagery",
+      "target": "src_data_contact"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "review-images/12-WhatsApp-Image-2025-07-22-at-12.07.37-PM-e1760390529261.jpeg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_12_whatsapp_image_2025_07_22_at_12_07_37_pm_e1760390529261",
+      "target": "src_data_contact"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "placeholder_imagery",
+      "target": "src_data_imageassets"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "classone_replica",
+      "target": "src_data_mainnavlinks"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "placeholder_imagery",
+      "target": "src_data_homeslides"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "review-images/13-palmsens-canva.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_13_palmsens_canva",
+      "target": "src_data_homeslides"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.3,
+      "source_file": "src/assets/hero.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_hero",
+      "target": "src_data_homeslides"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "placeholder_imagery",
+      "target": "src_data_productcatalog"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/01-58.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_01_58",
+      "target": "src_data_productcatalog"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/02-59.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_02_59",
+      "target": "src_data_productcatalog"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/03-60.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_03_60",
+      "target": "src_data_productcatalog"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/04-61.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_04_61",
+      "target": "src_data_productcatalog"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/05-62.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_05_62",
+      "target": "src_data_productcatalog"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "placeholder_imagery",
+      "target": "src_data_softwaredetailcatalog"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "review-images/11-Screenshot-2025-07-21-184542.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_11_screenshot_2025_07_21_184542",
+      "target": "src_data_softwaredetailcatalog"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "placeholder_imagery",
+      "target": "src_data_resourcecards"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "review-images/06-business-video-call-laptop-1024x683.jpg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_06_business_video_call_laptop_1024x683",
+      "target": "src_data_resourcecards"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "review-images/08-Screenshot-2025-07-19-112807-1024x574.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_08_screenshot_2025_07_19_112807_1024x574",
+      "target": "src_data_resourcecards"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "review-images/09-Screenshot-2025-07-19-113048.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_09_screenshot_2025_07_19_113048",
+      "target": "src_data_resourcecards"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "review-images/10-Screenshot-2025-07-19-113200.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_10_screenshot_2025_07_19_113200",
+      "target": "src_data_resourcecards"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.3,
+      "source_file": "src/assets/javascript.svg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_javascript",
+      "target": "src_main_jsx"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.3,
+      "source_file": "src/assets/vite.svg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_vite",
+      "target": "src_main_jsx"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "readme_classone_replica",
+      "target": "classone_replica"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "readme_classone_replica",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/01-58.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_01_58",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/02-59.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_02_59",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/03-60.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_03_60",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/04-61.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_04_61",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/05-62.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_05_62",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/06-business-video-call-laptop-1024x683.jpg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_06_business_video_call_laptop_1024x683",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/07-ClassOne-logo.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_07_classone_logo",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/08-Screenshot-2025-07-19-112807-1024x574.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_08_screenshot_2025_07_19_112807_1024x574",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/09-Screenshot-2025-07-19-113048.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_09_screenshot_2025_07_19_113048",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/10-Screenshot-2025-07-19-113200.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_10_screenshot_2025_07_19_113200",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/11-Screenshot-2025-07-21-184542.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_11_screenshot_2025_07_21_184542",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/12-WhatsApp-Image-2025-07-22-at-12.07.37-PM-e1760390529261.jpeg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_12_whatsapp_image_2025_07_22_at_12_07_37_pm_e1760390529261",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/13-palmsens-canva.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_13_palmsens_canva",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "review-images/14-WhatsApp-Image-2025-12-15-at-3.46.45-PM.jpeg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_14_whatsapp_image_2025_12_15_at_3_46_45_pm",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.35,
+      "source_file": "src/assets/hero.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_hero",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.35,
+      "source_file": "src/assets/javascript.svg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_javascript",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.35,
+      "source_file": "src/assets/vite.svg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_vite",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.35,
+      "source_file": "public/favicon.svg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_favicon",
+      "target": "placeholder_imagery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.35,
+      "source_file": "public/icons.svg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "img_icons",
+      "target": "placeholder_imagery"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "product_imagery_set",
+      "label": "Product imagery set",
+      "nodes": [
+        "img_01_58",
+        "img_02_59",
+        "img_03_60",
+        "img_04_61",
+        "img_05_62"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "review-images\\manifest.json"
+    },
+    {
+      "id": "resource_media_set",
+      "label": "Resource media set",
+      "nodes": [
+        "img_06_business_video_call_laptop_1024x683",
+        "img_08_screenshot_2025_07_19_112807_1024x574",
+        "img_09_screenshot_2025_07_19_113048",
+        "img_10_screenshot_2025_07_19_113200",
+        "img_11_screenshot_2025_07_21_184542"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "review-images\\manifest.json"
+    },
+    {
+      "id": "brand_and_contact_set",
+      "label": "Brand and contact imagery set",
+      "nodes": [
+        "img_07_classone_logo",
+        "img_12_whatsapp_image_2025_07_22_at_12_07_37_pm_e1760390529261",
+        "img_13_palmsens_canva",
+        "img_14_whatsapp_image_2025_12_15_at_3_46_45_pm"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "review-images\\manifest.json"
+    }
+  ]
+}

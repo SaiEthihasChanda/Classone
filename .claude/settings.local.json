@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:classonesystems.in)",
+      "Bash(awk 'NR>=2669 && /footer/' src/styles.css)",
+      "Bash(tail -15 /tmp/vite.log)",
+      "Read(//tmp/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/)",
+      "PowerShell(Start-Process \"http://localhost:5173/\")",
+      "Bash(node -e ' *)",
+      "Bash(node --check src/data.js)",
+      "Bash(tail -6 /tmp/vite.log; echo \"---\"; node --check src/data.js && echo \"data.js OK\"; rm -f review-images/_*.png review-images/_top-*.png 2>/dev/null; echo \"cleaned temp shots\")",
+      "Bash(rm -f review-images/_*.png review-images/_*.jpg 2>/dev/null; node --check src/data.js && echo \"data.js OK\"; tail -3 /tmp/vite.log)",
+      "Bash(curl -s -o /dev/null -w \"dev server: %{http_code}\\\\n\" http://localhost:5173/)",
+      "Bash(npm run *)",
+      "Bash(rm -f review-images/_*.png review-images/_*.jpg 2>/dev/null *)",
+      "Bash(curl -s -o /dev/null -w \"dev: %{http_code}\\\\n\" http://localhost:5173/)",
+      "Bash(node -e 'fetch\\(\"https://classonesystems.in/product/emstat4s/\"\\).then\\(r=>r.text\\(\\)\\).then\\(t=>console.log\\(\"fetched bytes:\",t.length\\)\\).catch\\(e=>console.log\\(\"ERR\",e.message\\)\\)')",
+      "Bash(timeout 240 node _scrape.mjs)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\saiet\\Classone\\review-images"
+    ]
+  }
+}
