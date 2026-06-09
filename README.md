@@ -1,6 +1,5 @@
 # ClassOneSystem Replica
 
-Local React + Vite replica of [classonesystems.in](https://classonesystems.in/) with placeholder imagery.
 
 ## Run locally
 
