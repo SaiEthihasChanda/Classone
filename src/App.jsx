@@ -466,7 +466,7 @@ function Header({ pathname, onNavigate, onSearchOpen, mobileMenuOpen, setMobileM
               const isOpen = desktopMenuOpen === item.label
 
               return (
-                <div key={item.label} className={`nav__item ${hasMenu ? 'nav__item--dropdown' : ''} ${isOpen ? 'is-open' : ''}`.trim()} onMouseEnter={hasMenu ? () => openDesktopMenu(item.label) : undefined}>
+                <div key={item.label} className={`nav__item ${hasMenu ? 'nav__item--dropdown' : ''} ${item.label === 'Software' ? 'nav__item--mega' : ''} ${isOpen ? 'is-open' : ''}`.trim()} onMouseEnter={hasMenu ? () => openDesktopMenu(item.label) : undefined}>
                   {renderDesktopTrigger(item)}
                   {hasMenu && isOpen ? renderDesktopMenu(item) : null}
                 </div>
@@ -1701,7 +1701,7 @@ function SoftwareDetailPage({ data, fallbackTitle, onNavigate }) {
             <h1 className="software-detail-hero__title">{detail.title}</h1>
             <p className="software-detail-hero__desc">{detail.description}</p>
             {detail.button ? (
-              <button type="button" className="button button--primary software-detail-hero__btn">{detail.button}</button>
+              <button type="button" className="button button--primary">{detail.button}</button>
             ) : null}
           </div>
           {detail.heroImage ? (
@@ -1712,21 +1712,60 @@ function SoftwareDetailPage({ data, fallbackTitle, onNavigate }) {
         </div>
       </section>
 
-      <section className="section software-detail-features">
-        <div className="container">
-          <div className="software-feature-grid">
-            {detail.cards.map((card) => (
-              <article className="software-feature-card" key={card.title}>
-                <h3>{card.title}</h3>
-                <p>{card.text}</p>
-              </article>
-            ))}
+      {detail.cards && detail.cards.length > 0 ? (
+        <section className="section software-detail-features">
+          <div className="container">
+            <div className="software-feature-grid">
+              {detail.cards.map((card) => (
+                <article className="software-feature-card" key={card.title}>
+                  <h3>{card.title}</h3>
+                  <p>{card.text}</p>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
+
+      {detail.features ? (
+        <section className="section software-detail-section">
+          <div className="container software-detail-section__inner">
+            <div className="software-detail-section__text">
+              <p className="software-detail-hero__eyebrow">{detail.features.eyebrow}</p>
+              <SectionHeading title={detail.features.title} />
+              <ul className="software-features-list">
+                {detail.features.items.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+              {detail.features.note ? <p className="software-features-note">{detail.features.note}</p> : null}
+            </div>
+            {detail.features.image ? (
+              <div className="software-detail-section__media">
+                <img src={detail.features.image} alt={detail.features.title} loading="lazy" />
+              </div>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
+
+      {detail.techniques ? (
+        <section className="section section--alt software-techniques-section">
+          <div className="container">
+            <p className="software-detail-hero__eyebrow">{detail.techniques.eyebrow}</p>
+            <SectionHeading title={detail.techniques.title} />
+            <div className="software-techniques-grid">
+              {detail.techniques.groups.map((group) => (
+                <div key={group.heading} className="software-techniques-group">
+                  <h4>{group.heading}</h4>
+                  <ul>{group.items.map((item) => <li key={item}>{item}</li>)}</ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {detail.sections.map((section, index) => (
-        <section className={`section software-detail-section ${index % 2 === 1 ? 'section--alt' : ''}`.trim()} key={section.title}>
+        <section className={`section software-detail-section ${index % 2 === 0 ? 'section--alt' : ''}`.trim()} key={section.title}>
           <div className={`container ${section.image ? 'software-detail-section__inner' : ''}`.trim()}>
             <div className="software-detail-section__text">
               <SectionHeading title={section.title} />
@@ -1735,7 +1774,9 @@ function SoftwareDetailPage({ data, fallbackTitle, onNavigate }) {
               ))}
             </div>
             {section.image ? (
-              <PlaceholderPanel src={section.image} alt={section.title} tone="light" className="software-detail-section__media" />
+              <div className="software-detail-section__media">
+                <img src={section.image} alt={section.title} loading="lazy" />
+              </div>
             ) : null}
           </div>
         </section>

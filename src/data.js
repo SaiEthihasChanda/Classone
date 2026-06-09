@@ -1511,16 +1511,17 @@ export const softwareDetails = {
   'ps-trace': {
     eyebrow: 'SOFTWARE',
     title: 'PSTrace for Windows',
-    description: 'PSTrace is the software to control your PalmSens or EmStat potentiostat from a Windows PC. Dedicated Scientific, Corrosion and Analytical modes make it powerful yet easy to use.',
+    description: 'PSTrace software is shipped as standard with all single channel and multiplexed instruments. The software provides support for all techniques and device functionalities.',
     button: 'Download',
+    heroImage: '/img/sw-hero-sofware-pstrace.png',
     cards: [
       { title: 'Easy and Versatile', text: 'Dedicated modes make PSTrace easy to use. The Scientific mode allows you to run all the techniques our instruments have to offer, whereas the Corrosion and Analytical modes provide a specific set of techniques and tools.' },
       { title: 'Advanced Electrochemistry', text: 'Create a complex series of experiments using the Scripting window. The Scripting window allows for automated batch measurements and analysis.' },
       { title: 'One-click Export to Excel', text: 'If you feel more comfortable using your own spreadsheets, use the one-click export to Excel. Or export your data to Origin or Matlab.' },
     ],
     sections: [
-      { title: 'Easy and Versatile', paragraphs: ['Dedicated modes make PSTrace easy to use. The Scientific mode allows you to run all the techniques our instruments have to offer, whereas the Corrosion and Analytical modes provide a specific set of techniques and tools.'], image: '/img/palmsens-2021-11-PSTrace5-overview.png' },
-      { title: 'Setting up your Measurement', paragraphs: ['The method editor provides instant feedback on parameters that are either invalid or do not match the instruments capabilities.'], image: '/img/palmsens-2016-11-method-editor-small.gif' },
+      { title: 'Easy and Versatile', paragraphs: ['PSTrace is designed to be productive immediately after installation, without going through a long learning period. It has three modes; the Scientific mode which allows you to run all the techniques our instruments have to offer, the Corrosion mode which provides a specific set of corrosion techniques and tools, and the Analytical mode for a specific set of techniques and tools. Making it easy for a beginner to quickly pick a technique and start a measurement. For those who want more, the Advanced PSTrace mode gives a user full control over their measurements.', 'Picking a tip for a single measurement does not cover complex experiments without repeating the setup manually. In PSTrace you can batch measurements and analysis. The interactive scripting window allows you to define the order and timing of measurements, making it easy to automate measurements.'], image: '/img/palmsens-2021-11-PSTrace5-overview.png' },
+      { title: 'Setting up your Measurement', paragraphs: ['The method editor provides instant feedback on parameters that are either invalid or do not match the instruments capabilities:'], image: '/img/palmsens-2016-11-method-editor-small.gif' },
       { title: 'Measurement Data', paragraphs: ['All measurement data and curves are stored in a single .pssession file. Peaks are detected automatically or can be marked by hand. Exporting data to Excel including generation of a native Excel graph is a matter of a single click.'], image: '/img/palmsens-2016-11-load-data-cv-export-excel3.gif' },
     ],
   },
@@ -1529,16 +1530,19 @@ export const softwareDetails = {
     title: 'MultiTrace for Windows',
     description: 'The MultiTrace software controls the individual channels of our multi-channel instruments and the individual working electrodes of polypotentiostats.',
     button: 'Download',
-    heroImage: '/img/palmsens-2021-03-MultiTrace-Indiv-Mode-optimized.gif',
+    heroImage: '/img/sw-hero-sofware-pstrace.png',
     cards: [
-      { title: 'Individual Mode', text: 'All potentiostats are used independently. Measurements can be started on all channels with one click, or on each channel individually.' },
+      { title: 'Individual Mode', text: 'All potentiostats are used independently. Measurements can be started on all channels with one click, or on each channel individually. Each measured curve is shown in its own plot.' },
       { title: 'Simultaneous Mode', text: 'In the Simultaneous mode, all channels run the same measurement. The measured curves are displayed in a single plot and are stored in a single data file.' },
-      { title: 'Scripting', text: 'In the Individual mode of MultiTrace you can create automated complex experiments for each separate channel.' },
+      { title: 'Scripting', text: 'In the Individual mode of MultiTrace you can create automated complex experiments for each separate channel. In the scripting window you can easily arrange your building blocks for automated experiments.' },
     ],
     sections: [
-      { title: 'Combining Multi- and Single Channel Instruments', paragraphs: ['MultiTrace enables users to integrate different potentiostat types together as unified equipment.'], image: '/img/palmsens-2021-03-combine-single-multichannels.png' },
-      { title: 'Learn how to use MultiTrace', paragraphs: ['Tutorial videos demonstrate operation across individual and simultaneous modes.'], image: '/img/palmsens-2016-12-MultiTrace4-1SimulMode-screenshot.jpg' },
-      { title: 'Minimum System Requirements', paragraphs: ['Windows 7 SP1 or later, dual-core processor minimum, 2-4 GB RAM, .NET 4.7.2 framework, 1280x768 screen resolution.'] },
+      { title: 'Individual Mode', paragraphs: ['All potentiostats are used independently. Measurements can be started on all channels with one click, or on each channel individually. Each measured curve is shown in its own plot. Data acquired by the individual channels is saved in separate files. A timer can be set to apply a waiting time between multiple measurements on the same channel.'], image: '/img/palmsens-2021-03-MultiTrace-Indiv-Mode-optimized.gif' },
+      { title: 'Simultaneous Mode', paragraphs: ['In the Simultaneous mode, all channels run the same measurement. The measured curves are displayed in a single plot and are stored in a single data file.'], image: '/img/palmsens-2016-12-MultiTrace4-1SimulMode-screenshot.jpg' },
+      { title: 'Scripting', paragraphs: ['In the Individual mode of MultiTrace you can create automated complex experiments for each separate channel. In the scripting window you can easily arrange your building blocks for automated experiments, and then run them all from the multichannel interface. It also allows for extended measurements and long-term automated protocols using multiple datasets from different channels.'], image: '/img/palmsens-2021-03-Scripting-with-PS4-optimized.gif' },
+      { title: 'Combining Multi- and Single Channel Instruments', paragraphs: ['MultiTrace also allows you to combine different multi-channel or single-channel potentiostats. Each single instrument can be assigned with a channel number. The instruments can be grouped and controlled together or they can be used individually. MultiChannelPalmSens software makes it possible to work together with all these instruments.'], image: '/img/palmsens-2021-03-combine-single-multichannels.png' },
+      { title: 'Tutorial Videos', paragraphs: ['MultiTrace allows you to control multiple PalmSens potentiostats / galvanostats / impedance analyzers. This can be a multichannel device such as the MultiPalmSens4 or the Multi EmStat4, or this can be multiple individual instruments. Find out more in our tutorial videos.'] },
+      { title: 'Minimum System Requirements', paragraphs: ['Windows 7 SP1, 8, 10 or 11', '1 GHz or faster 32-bit (x86) or 64-bit (x64) processor with at least 2 processor cores (4 or more cores recommended)', '2 GB RAM (32-bit) or 4 GB RAM (64-bit)', '.NET 4.7.2 framework', '1280 × 768 screen resolution'] },
     ],
   },
   'pstouch-2': {
@@ -1546,16 +1550,41 @@ export const softwareDetails = {
     title: 'PStouch for Android',
     description: 'PStouch is a free app for Android devices that can be used with PalmSens, Sensit and EmStat potentiostats. PStouch works with your potentiostat via USB or via Bluetooth.',
     button: 'Download',
-    heroImage: '/img/palmsens-2020-04-pstouch-screens-2020-1-400x400.jpg',
-    cards: [
-      { title: 'Setting up and running measurements', text: 'Configure and execute electrochemical tests directly from your Android device.' },
-      { title: 'Loading and saving measured curves', text: 'Store and retrieve your measurement data on the go.' },
-      { title: 'Analysing and manipulating peaks', text: 'Tools for examining detected peaks and their parameters.' },
-    ],
+    heroImage: '/img/palmsens-2023-04-pstouch.png',
+    features: {
+      eyebrow: 'Features',
+      title: 'PStouch contains the following features',
+      items: [
+        'Setting up and running measurements',
+        'Loading and saving measured curves',
+        'Analysing and manipulating peaks',
+        'Sharing data directly via e-mail, Dropbox, or any other file sharing service',
+        'Support for PalmSens accessories such as a multiplexer, stirrer or bipot',
+      ],
+      note: 'All method and curve files are fully compatible with our PSTrace software for Windows. The power provided by the USB is sufficient to power an EmStat or Sensit Smart. This way it is possible to carry an electrochemical lab with you that weighs 50g (Samsung Galaxy S9 with Sensit Smart).',
+      image: '/img/palmsens-2020-04-pstouch-screens-2020-1-400x400.jpg',
+    },
+    techniques: {
+      eyebrow: 'Available techniques',
+      title: 'The following techniques are supported by PStouch',
+      groups: [
+        {
+          heading: 'Voltammetric techniques:',
+          items: ['Linear sweep voltammetry (LSV)', 'Differential pulse voltammetry (DPV)', 'Square wave voltammetry (SWV)', 'Normal pulse voltammetry (NPV)', 'AC voltammetry (ACV)', 'Cyclic voltammetry (CV)', 'Chronopotentiometric stripping (SCP/PSA)'],
+        },
+        {
+          heading: 'Technique as a function of time:',
+          items: ['Chronoamperometry (CA)', 'Pulsed amperometric detection (PAD)', 'Multiple pulse amperometry (MPAD)', 'Fast amperometry (FAmp)', 'Potentiometry (POT)', 'Open circuit potentiometry (OCP)', 'Multistep potentiometry (MS)'],
+        },
+        {
+          heading: 'Impedance spectroscopy / EIS:',
+          items: ['Potential scan', 'Time scan', 'Scans can be made at a fixed frequency or with a frequency scan.', 'Fixed potential'],
+        },
+      ],
+    },
     sections: [
-      { title: 'Available Techniques', paragraphs: ['Voltammetric methods (LSV, DPV, SWV, etc.), time-dependent techniques (CA, PAD, etc.), and impedance spectroscopy capabilities.'] },
-      { title: 'Sharing Measurement Results', paragraphs: ['Perform measurements in the field and share data immediately with colleagues in the lab.'], image: '/img/palmsens-2020-04-pstouch-share-400x400.jpg' },
-      { title: 'Data Processing', paragraphs: ['Peak detection and analysis features, with compatibility between PStouch and PSTrace software formats.'], image: '/img/palmsens-2020-04-pstouch-peak-heights-400x400.jpg' },
+      { title: 'Sharing Measurement Results', paragraphs: ['Perform measurements in the field and share data immediately with colleagues in the lab. Data can be stored locally, of course, but PStouch offers share functions to send your data with your email applications to any place you need it. Also the dropbox app, google drive or any other app supporting sharing functionalities is supported by PStouch. So directly after your measurement, your data is safe and backed up before you are back in the lab.'], image: '/img/palmsens-2020-04-pstouch-share-400x400.jpg' },
+      { title: 'Data Processing', paragraphs: ['PStouch offers you the basic tools to analyse your data. You can look at single points or have automatic peak detection. Detected peaks are analysed for their potential, peak current, peak height, width and area. A survey of the parameters for all peaks is available with one touch.', 'PStouch saves the data in same format as our windows software PSTrace does. Accordingly all data recorded with PStouch can directly be opened with PSTrace without any conversion.'], image: '/img/palmsens-2020-04-pstouch-peak-heights-400x400.jpg' },
     ],
   },
   'pstrace-xpress-2': {
@@ -1570,9 +1599,10 @@ export const softwareDetails = {
       { title: 'Working with Workspaces', text: 'PSTrace Xpress is built for productivity, designed to handle extensive data generation during numerous measurements.' },
     ],
     sections: [
-      { title: 'Working with Multiple Instruments', paragraphs: ['Create a MyPalmSens account via Microsoft, Google, Dropbox, or email/password, with project-based autosave and sharing capabilities.'], image: '/img/palmsens-2023-10-PSTraceXpress-Instruments.gif' },
-      { title: 'Seamless MyPalmSens Integration', paragraphs: ['Authentication options and collaborative data management features for multiple users within shared projects.'], image: '/img/palmsens-2023-10-PSTraceXpress-MyPS-1000px.gif' },
-      { title: 'Using Workspaces', paragraphs: ['Workspace tabs provide tabbed navigation with preview thumbnails for managing multiple concurrent measurement setups.'], image: '/img/palmsens-2023-10-PSTX-workspaces.gif' },
+      { title: 'Working with Multiple Instruments', paragraphs: ['To get a grip on your measurement data with MyPalmSens, create a MyPalmSens account via Microsoft, Google, Dropbox, or email/password. The project-based autosave and sharing capabilities allow you to keep all the data from your project in MyPalmSens Projects, share and access data from different locations and collaborate easily with colleagues.'], image: '/img/palmsens-2023-10-PSTraceXpress-Instruments.gif' },
+      { title: 'Seamless MyPalmSens Integration', paragraphs: ['Creating a MyPalmSens account is a simple process that offers multiple authentication options. Once complete you can use a traditional email address and password combination, or you can link it with an existing Microsoft, Google or Dropbox account for easy single-sign-on. After creating an account you can start using PSTrace Xpress to save measurement data directly to MyPalmSens Projects, share with colleagues, enabling them to view, edit, or add their own data and thus creating a seamless collaboration experience.'], image: '/img/palmsens-2023-10-PSTraceXpress-MyPS-1000px.gif' },
+      { title: 'Using Workspaces', paragraphs: ['Workspaces are essentially a display area that offers multiple instances of PSTrace Xpress for any working environment to stay in. You can have a separate workspace for each of your research topics. Clicking a workspace shows the latest view you had there. This way you can easily switch between your projects, without the need of opening and closing files.'], image: '/img/palmsens-2023-10-PSTX-workspaces.gif' },
+      { title: 'Minimum System Requirements', paragraphs: ['Windows 10 or 11', '1 GHz 64-bit processor', '4 GB RAM', '1366 × 768 minimum display resolution'] },
     ],
   },
 }

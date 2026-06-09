@@ -195,7 +195,6 @@ button {
   display: flex;
   align-items: center;
   gap: 10px;
-  position: relative;
   z-index: 20;
 }
 
@@ -332,8 +331,19 @@ button {
   border: 1px solid rgba(15, 23, 32, 0.08);
 }
 
+/* Software mega-menu nav item is position:static so the panel is relative to the sticky header-bar */
+.nav__item--mega { position: static; }
+
 .nav__dropdown-panel--mega {
-  width: min(940px, calc(100vw - 48px));
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  padding: 20px calc((100vw - min(1200px, 100vw - 48px)) / 2);
 }
 
 .nav__mega-grid {
@@ -3799,17 +3809,19 @@ textarea.app-form__control { resize: vertical; }
 .software-card__body p { margin: 0; color: #54616b; font-size: 14px; line-height: 1.6; }
 
 .software-detail-hero {
-  background: linear-gradient(135deg, #0f2336, #0a1622);
-  color: #fff;
+  background: #fff;
+  color: var(--text);
   padding: 64px 0;
+  border-bottom: 1px solid #eaeef1;
 }
 .software-detail-hero__inner { max-width: 720px; }
 .software-detail-hero__eyebrow {
   margin: 0 0 12px;
   color: var(--teal);
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  font-weight: 600;
 }
 .software-detail-hero__title {
   margin: 0 0 18px;
@@ -3818,9 +3830,9 @@ textarea.app-form__control { resize: vertical; }
   font-size: clamp(30px, 3.4vw, 48px);
   text-transform: uppercase;
   line-height: 1.1;
+  color: #0f2336;
 }
-.software-detail-hero__desc { margin: 0 0 24px; color: rgba(255,255,255,0.82); font-size: 16px; line-height: 1.7; }
-.software-detail-hero__btn { color: #fff; }
+.software-detail-hero__desc { margin: 0 0 24px; color: #4a5568; font-size: 16px; line-height: 1.7; }
 
 .software-detail-features { padding: 56px 0; }
 .software-feature-grid {
@@ -3847,7 +3859,21 @@ textarea.app-form__control { resize: vertical; }
   align-items: center;
 }
 .software-detail-section__text p { margin: 0 0 12px; color: #54616b; line-height: 1.75; }
-.software-detail-section__media { min-height: 280px; }
+.software-detail-section__media { min-height: 280px; display: flex; align-items: center; justify-content: center; }
+.software-detail-section__media img { width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: 8px; }
+
+/* PStouch features list */
+.software-features-list { margin: 12px 0 16px 0; padding-left: 20px; color: #4a5568; line-height: 1.8; }
+.software-features-list li { margin-bottom: 4px; }
+.software-features-note { font-size: 14px; color: #6a7680; line-height: 1.7; margin-top: 12px; }
+
+/* PStouch techniques section */
+.software-techniques-section { padding: 56px 0; }
+.software-techniques-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 24px; }
+.software-techniques-group h4 { font-size: 14px; font-weight: 700; color: #0f2336; margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.04em; }
+.software-techniques-group ul { margin: 0; padding-left: 18px; }
+.software-techniques-group li { font-size: 14px; color: #54616b; line-height: 1.7; margin-bottom: 3px; }
+@media (max-width: 700px) { .software-techniques-grid { grid-template-columns: 1fr; } }
 
 @media (max-width: 900px) {
   .software-grid, .software-feature-grid { grid-template-columns: 1fr; }
@@ -4570,11 +4596,8 @@ textarea.app-form__control { resize: vertical; }
 }
 .software-detail-hero__media img {
   width: 100%;
-  max-height: 320px;
+  max-height: 340px;
   object-fit: contain;
-  border-radius: 10px;
-  background: #fff;
-  padding: 10px;
 }
 @media (max-width: 900px) {
   .software-detail-hero__inner--media { grid-template-columns: 1fr; }
