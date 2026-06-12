@@ -1,0 +1,79 @@
+import { useEntity } from '../lib/store'
+import { AppLink } from '../components/common/AppLink'
+import { ImageGallery } from '../components/common/ImageGallery'
+
+export function ProductDetailPage({ slug, onNavigate }) {
+  const { data, status } = useEntity('products', slug)
+
+  if (status === 'loading') {
+    return (
+      <section className="section">
+        <div className="container"><div className="skeleton-card" style={{ minHeight: 360 }} /></div>
+      </section>
+    )
+  }
+
+  if (!data) {
+    return (
+      <section className="section">
+        <div className="container">
+          <h1>Product not found</h1>
+          <AppLink href="/product" onNavigate={onNavigate} className="btn btn--primary btn--md" style={{ marginTop: '1rem', display: 'inline-flex' }}>
+            View All Products
+          </AppLink>
+        </div>
+      </section>
+    )
+  }
+
+  return (
+    <>
+      <section className="product-detail">
+        <div className="container product-detail__inner">
+          <div className="product-detail__media">
+            <ImageGallery images={data.images || []} title={data.title} />
+          </div>
+          <div className="product-detail__info">
+            <p className="product-detail__eyebrow">PRODUCT</p>
+            <h1 className="product-detail__title">{data.title}</h1>
+            {data.shortHtml && (
+              <div className="product-detail__short product-prose" dangerouslySetInnerHTML={{ __html: data.shortHtml }} />
+            )}
+            <div className="product-detail__actions">
+              <AppLink href="/enquiry" onNavigate={onNavigate} className="btn btn--primary btn--md">
+                Enquiry Now
+              </AppLink>
+              <AppLink href="/product" onNavigate={onNavigate} className="btn btn--outline btn--md">
+                View All Products
+              </AppLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {data.descHtml && (
+        <section className="section product-desc-section">
+          <div className="container">
+            <h2 className="product-desc-section__title">Description &amp; Specification</h2>
+            <div className="product-prose product-prose--desc" dangerouslySetInnerHTML={{ __html: data.descHtml }} />
+          </div>
+        </section>
+      )}
+
+      {data.displayImages && data.displayImages.length > 0 && (
+        <section className="section">
+          <div className="container">
+            <h2 className="product-desc-section__title">Product Display</h2>
+            <div className="product-display-grid">
+              {data.displayImages.map((src, i) => (
+                <div key={src} className="product-display-grid__item">
+                  <img src={src} alt={`${data.title} display ${i + 1}`} loading="lazy" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+    </>
+  )
+}

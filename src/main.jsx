@@ -1,10 +1,13 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App'
-import './styles.css'
+import App from './NewApp'
+import { DataProvider } from './lib/store'
+import './styles/index.css'
 
 createRoot(document.getElementById('app')).render(
   <React.StrictMode>
-    <App />
+    <DataProvider>
+      <App />
+    </DataProvider>
   </React.StrictMode>,
 )

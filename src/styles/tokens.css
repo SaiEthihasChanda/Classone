@@ -1,0 +1,157 @@
+/* ============================================================
+   DESIGN TOKENS — ClassOne Systems
+   Single source of truth for all visual values.
+   ============================================================ */
+
+:root {
+  /* ── Brand palette ── */
+  --brand-primary:      #1a9ab5;
+  --brand-primary-dark: #0f7a91;
+  --brand-primary-light:#e8f6fa;
+  --brand-accent:       #43d3c4;   /* bright aqua — gradient partner */
+  --brand-accent-2:     #5fb8ff;   /* electric blue — aurora partner */
+  --brand-navy:         #0c1e2e;
+  --brand-navy-mid:     #14293c;
+  --brand-navy-soft:    #1d3448;
+  --brand-navy-deep:    #07151f;   /* near-black base for dark sections */
+
+  /* ── Blue scale (blue-forward direction) ── */
+  --blue-950: #08294a;
+  --blue-900: #0d3a63;
+  --blue-800: #114a78;
+  --blue-700: #155a8d;
+  --blue-600: #1d6fa6;
+  --blue-500: #2389c4;
+  --blue-400: #4aa6da;
+  --blue-300: #86c8ea;
+  --blue-200: #bce0f4;
+  --blue-100: #e1f0fa;
+  --blue-50:  #eef6fc;
+
+  /* ── Neutral scale ── */
+  --gray-50:  #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* ── Semantic surface tokens (blue-tinted neutrals) ── */
+  --bg:           #f4f8fc;
+  --surface:      #ffffff;
+  --surface-sub:  #eef5fb;
+  --surface-blue: #e7f1fa;
+  --surface-dark: #0c1e2e;
+  --border:       #dbe7f1;
+  --border-strong:#bcd2e3;
+
+  /* ── Semantic text tokens ── */
+  --text:         #111827;
+  --text-sub:     #4b5563;
+  --text-muted:   #6b7280;
+  --text-inverse: #ffffff;
+  --text-brand:   #1a9ab5;
+
+  /* ── Semantic interactive tokens ── */
+  --focus-ring: 0 0 0 3px rgba(26, 154, 181, 0.35);
+  --link-color: #1a9ab5;
+
+  /* ── Spacing (4px grid) ── */
+  --sp-1:   4px;
+  --sp-2:   8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-14: 56px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+  --sp-24: 96px;
+  --sp-32: 128px;
+
+  /* ── Typography ── */
+  --font-sans:    'Cabin', system-ui, sans-serif;
+  --font-display: 'Roboto', system-ui, sans-serif;
+
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.875rem;  /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg:   1.125rem;  /* 18px */
+  --text-xl:   1.25rem;   /* 20px */
+  --text-2xl:  1.5rem;    /* 24px */
+  --text-3xl:  1.875rem;  /* 30px */
+  --text-4xl:  2.25rem;   /* 36px */
+  --text-5xl:  3rem;      /* 48px */
+  --text-6xl:  3.75rem;   /* 60px */
+
+  --leading-tight:  1.2;
+  --leading-snug:   1.35;
+  --leading-normal: 1.5;
+  --leading-relaxed:1.65;
+  --leading-loose:  1.8;
+
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.05em;
+  --tracking-wider:  0.08em;
+  --tracking-widest: 0.12em;
+
+  /* ── Border radius ── */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-2xl:  32px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-xs:  0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm:  0 2px 6px rgba(12,30,46,0.06), 0 1px 2px rgba(12,30,46,0.04);
+  --shadow-md:  0 6px 20px rgba(12,30,46,0.09), 0 2px 6px rgba(12,30,46,0.05);
+  --shadow-lg:  0 14px 40px rgba(12,30,46,0.12), 0 5px 12px rgba(12,30,46,0.06);
+  --shadow-xl:  0 28px 70px rgba(12,30,46,0.16), 0 10px 22px rgba(12,30,46,0.08);
+  --shadow-brand: 0 10px 30px rgba(26, 154, 181, 0.32);
+  --shadow-glow:  0 0 0 1px rgba(26,154,181,0.25), 0 14px 40px -8px rgba(26,154,181,0.45);
+
+  /* ── Gradients ── */
+  --grad-brand:   linear-gradient(120deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
+  --grad-brand-soft: linear-gradient(120deg, #1a9ab5 0%, #2bb6c9 50%, #43d3c4 100%);
+  /* "navy" sections are now a vibrant blue→teal gradient (less black) */
+  --grad-navy:    linear-gradient(150deg, #08294a 0%, #0f456f 45%, #1d6fa6 100%);
+  --grad-blue:    linear-gradient(150deg, #0d3a63 0%, #1d6fa6 55%, #2bb6c9 100%);
+  --grad-text:    linear-gradient(100deg, #1a9ab5 0%, #43d3c4 60%, #5fb8ff 100%);
+  --grad-sheen:   linear-gradient(110deg, transparent 20%, rgba(255,255,255,0.45) 50%, transparent 80%);
+  /* light, airy hero / surface washes */
+  --grad-hero:    linear-gradient(165deg, #ffffff 0%, #eaf4fb 42%, #d6ebf7 100%);
+  --grad-surface-blue: linear-gradient(180deg, #f3f9fd 0%, #e8f3fb 100%);
+
+  /* ── Glow color stops (aurora) ── */
+  --glow-teal:  rgba(26,154,181,0.55);
+  --glow-aqua:  rgba(67,211,196,0.45);
+  --glow-blue:  rgba(95,184,255,0.45);
+  --glow-sky:   rgba(120,196,234,0.55);
+  /* lighter glows for use on light backgrounds */
+  --glow-teal-l: rgba(26,154,181,0.30);
+  --glow-blue-l: rgba(95,184,255,0.32);
+  --glow-aqua-l: rgba(67,211,196,0.28);
+
+  /* ── Transitions ── */
+  --ease-fast:   150ms ease;
+  --ease-base:   200ms ease;
+  --ease-slow:   300ms ease;
+  --ease-spring: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Layout ── */
+  --container:      1240px;
+  --container-sm:   900px;
+  --container-wide: 1440px;
+  --section-y:      var(--sp-20);
+  --header-h:       72px;
+}

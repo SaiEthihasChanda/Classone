@@ -1,0 +1,226 @@
+/* ============================================================
+   EFFECTS — aurora, glow, gradient-text, shine, scroll-reveal
+   The "premium" visual layer. Decorative only; degrades safely.
+   ============================================================ */
+
+/* ─── Gradient text ──────────────────────────────────────────
+   Apply to a heading (or a <span>) to paint it with the brand
+   gradient. Falls back to solid brand color if unsupported. */
+.grad-text {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--brand-primary);
+}
+
+/* ─── Aurora field ───────────────────────────────────────────
+   A dark backdrop with soft animated colour blobs. Used behind
+   the hero and dark CTA. Place .aurora as an absolutely-
+   positioned layer inside a position:relative parent. */
+.aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  background: var(--grad-navy);
+}
+.aurora::before,
+.aurora::after,
+.aurora__blob {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.85;
+  will-change: transform;
+}
+.aurora::before {
+  width: 46vw; height: 46vw;
+  top: -14vw; left: -8vw;
+  background: radial-gradient(circle at 30% 30%, var(--glow-teal), transparent 70%);
+  animation: aurora-drift-1 18s ease-in-out infinite;
+}
+.aurora::after {
+  width: 40vw; height: 40vw;
+  bottom: -16vw; right: -6vw;
+  background: radial-gradient(circle at 60% 40%, var(--glow-blue), transparent 70%);
+  animation: aurora-drift-2 22s ease-in-out infinite;
+}
+.aurora__blob {
+  width: 32vw; height: 32vw;
+  top: 18%; right: 24%;
+  background: radial-gradient(circle, var(--glow-aqua), transparent 70%);
+  animation: aurora-drift-3 26s ease-in-out infinite;
+}
+@keyframes aurora-drift-1 {
+  0%,100% { transform: translate(0,0) scale(1); }
+  50%     { transform: translate(8vw, 6vw) scale(1.12); }
+}
+@keyframes aurora-drift-2 {
+  0%,100% { transform: translate(0,0) scale(1); }
+  50%     { transform: translate(-7vw, -5vw) scale(1.08); }
+}
+@keyframes aurora-drift-3 {
+  0%,100% { transform: translate(0,0) scale(1); opacity: 0.5; }
+  50%     { transform: translate(-5vw, 4vw) scale(1.2); opacity: 0.8; }
+}
+
+/* Fine grid overlay — adds a "technical / lab" texture over dark */
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 30%, #000 30%, transparent 75%);
+          mask-image: radial-gradient(ellipse 80% 80% at 50% 30%, #000 30%, transparent 75%);
+  pointer-events: none;
+}
+
+/* Subtle grain for premium depth (very low opacity). */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+/* ─── Glass surface ──────────────────────────────────────────
+   Translucent frosted panel for use over the aurora. */
+.glass {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+/* ─── Spotlight / glow border on hover ───────────────────────
+   Add .glow-card to a card. A gradient ring fades in on hover
+   and the card lifts. Works on top of existing card styles. */
+.glow-card {
+  position: relative;
+  isolation: isolate;
+  transition: transform var(--ease-base), box-shadow var(--ease-base), border-color var(--ease-base);
+}
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--grad-brand);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--ease-base);
+  z-index: 2;
+  pointer-events: none;
+}
+.glow-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-glow);
+  border-color: transparent;
+}
+.glow-card:hover::before { opacity: 1; }
+
+/* ─── Shine sweep (buttons, chips) ───────────────────────────
+   A diagonal light sweeps across on hover. */
+.shine { position: relative; overflow: hidden; }
+.shine::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -120%;
+  width: 60%; height: 100%;
+  background: var(--grad-sheen);
+  transform: skewX(-20deg);
+  transition: left 600ms ease;
+  pointer-events: none;
+}
+.shine:hover::after { left: 140%; }
+
+/* ─── Eyebrow chip ───────────────────────────────────────────
+   Pill-shaped section eyebrow with a glowing dot. */
+.eyebrow-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 5px var(--sp-3) 5px var(--sp-2);
+  border-radius: var(--radius-full);
+  background: var(--brand-primary-light);
+  border: 1px solid rgba(26,154,181,0.18);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--brand-primary-dark);
+}
+.eyebrow-chip::before {
+  content: "";
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(26,154,181,0.25);
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%,100% { box-shadow: 0 0 0 3px rgba(26,154,181,0.25); }
+  50%     { box-shadow: 0 0 0 5px rgba(26,154,181,0.10); }
+}
+
+/* ─── Scroll reveal ──────────────────────────────────────────
+   Elements tagged [data-reveal] start hidden + shifted, then
+   the IntersectionObserver in NewApp adds .is-revealed. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms cubic-bezier(.16,1,.3,1),
+              transform 700ms cubic-bezier(.16,1,.3,1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── Page-load entrance ─────────────────────────────────────
+   On every route open, the page's top-level sections fade/rise in
+   with a stagger. The wrapper starts hidden (no FOUC); NewApp adds
+   .is-entered on the next frame to trigger the staggered transition. */
+.page-enter > * {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 650ms cubic-bezier(.16,1,.3,1),
+              transform 650ms cubic-bezier(.16,1,.3,1);
+}
+.page-enter.is-entered > * { opacity: 1; transform: none; }
+.page-enter > *:nth-child(1) { transition-delay: 40ms; }
+.page-enter > *:nth-child(2) { transition-delay: 120ms; }
+.page-enter > *:nth-child(3) { transition-delay: 200ms; }
+.page-enter > *:nth-child(4) { transition-delay: 280ms; }
+.page-enter > *:nth-child(5) { transition-delay: 360ms; }
+.page-enter > *:nth-child(6) { transition-delay: 440ms; }
+.page-enter > *:nth-child(n+7) { transition-delay: 520ms; }
+
+/* ─── Accessibility & fallbacks ──────────────────────────────*/
+@media (prefers-reduced-motion: reduce) {
+  .aurora::before, .aurora::after, .aurora__blob,
+  .eyebrow-chip::before { animation: none !important; }
+  [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .page-enter > * { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .shine::after { display: none; }
+}
+
+/* If backdrop-filter is unsupported, give glass a solid-ish bg */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass { background: rgba(12,30,46,0.55); }
+}

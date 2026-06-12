@@ -1,0 +1,12 @@
+/* ============================================================
+   ClassOne Systems — Main Stylesheet
+   Entry point: imports all partials in dependency order.
+   ============================================================ */
+
+@import './tokens.css';
+@import './base.css';
+@import './effects.css';
+@import './components.css';
+@import './header.css';
+@import './footer.css';
+@import './pages.css';
