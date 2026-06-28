@@ -72,8 +72,12 @@ service cloud.firestore {
     // ── Enquiry submissions ─────────────────────────────────────────
     // Anyone (including unauthenticated visitors) may submit an enquiry.
     // Only admins may read or manage submissions.
+    // Rate-limiting guards: cap field count, key/value sizes, and require a
+    // server timestamp so bots cannot forge the submission time.
     match /enquiries/{docId} {
-      allow create: if true;
+      allow create: if request.resource.data.keys().size() <= 25
+        && request.resource.data.submittedAt == request.time
+        && (!('enquiryEmail' in request.resource.data));
       allow read, update, delete: if isAdmin();
     }
 

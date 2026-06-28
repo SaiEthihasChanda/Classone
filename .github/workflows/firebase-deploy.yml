@@ -39,10 +39,10 @@ jobs:
           FIREBASE_SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CLASSONE }}
         run: |
           echo "$FIREBASE_SA" > /tmp/sa.json
+          trap 'rm -f /tmp/sa.json' EXIT
           export GOOGLE_APPLICATION_CREDENTIALS=/tmp/sa.json
           npx firebase-tools@latest deploy --only hosting --project classone-systems 2>&1 | tee /tmp/deploy.log
           EXIT=${PIPESTATUS[0]}
-          rm -f /tmp/sa.json
           if [ $EXIT -ne 0 ] && grep -q "current active version" /tmp/deploy.log; then
             echo "Site is already up to date — no release needed."
             exit 0

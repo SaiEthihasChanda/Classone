@@ -30,7 +30,6 @@ export function EnquiryPage() {
       await api.submitEnquiry({
         ...fields,
         selections: selectedItems,
-        enquiryEmail: settings.enquiryEmail || 'saiethihaschanda@gmail.com',
       })
       setStatus('success')
       setFields({})

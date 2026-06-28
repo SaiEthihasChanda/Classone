@@ -1,3 +1,4 @@
+import DOMPurify from 'dompurify'
 import { useEffect, useRef, useState } from 'react'
 import { api } from '../lib/api'
 import { ArrowLeft, Calendar, MapPin, Share2, ChevronLeft, ChevronRight, Newspaper } from '../components/ui/Icons'
@@ -150,7 +151,7 @@ export function NewsPostPage({ slug, onNavigate }) {
             )}
 
             {post.longDesc && (
-              <div className="np-long prose" dangerouslySetInnerHTML={{ __html: post.longDesc }} />
+              <div className="np-long prose" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.longDesc) }} />
             )}
 
             {/* Footer actions */}

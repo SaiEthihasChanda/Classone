@@ -1,3 +1,4 @@
+import DOMPurify from 'dompurify'
 import { useProductBySlug } from '../lib/store'
 import { AppLink } from '../components/common/AppLink'
 import { ImageGallery } from '../components/common/ImageGallery'
@@ -38,7 +39,7 @@ export function ProductDetailPage({ slug, onNavigate }) {
             <p className="product-detail__eyebrow">PRODUCT</p>
             <h1 className="product-detail__title">{data.title}</h1>
             {data.shortHtml && (
-              <div className="product-detail__short product-prose" dangerouslySetInnerHTML={{ __html: data.shortHtml }} />
+              <div className="product-detail__short product-prose" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data.shortHtml) }} />
             )}
             <div className="product-detail__actions">
               <AppLink href="/enquiry" onNavigate={onNavigate} className="btn btn--primary btn--md">
@@ -56,7 +57,7 @@ export function ProductDetailPage({ slug, onNavigate }) {
         <section className="section product-desc-section">
           <div className="container">
             <h2 className="product-desc-section__title">Description &amp; Specification</h2>
-            <div className="product-prose product-prose--desc" dangerouslySetInnerHTML={{ __html: data.descHtml }} />
+            <div className="product-prose product-prose--desc" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data.descHtml) }} />
           </div>
         </section>
       )}

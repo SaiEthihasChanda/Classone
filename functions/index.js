@@ -1,6 +1,7 @@
 const { onDocumentCreated } = require('firebase-functions/v2/firestore')
 const { defineSecret }      = require('firebase-functions/params')
 const { initializeApp }     = require('firebase-admin/app')
+const { getFirestore }      = require('firebase-admin/firestore')
 const nodemailer            = require('nodemailer')
 
 initializeApp()
@@ -26,7 +27,11 @@ exports.onEnquiryCreated = onDocumentCreated(
     const data = event.data.data()
     if (!data) return
 
-    const toEmail       = data.enquiryEmail || GMAIL_USER
+    // Read the notification address from the authoritative settings doc
+    // (admin-only write) rather than from the submitted document (public write),
+    // which would allow anyone to use this function as an email relay.
+    const settingsSnap  = await getFirestore().doc('settings/site').get()
+    const toEmail       = settingsSnap.data()?.enquiryEmail || GMAIL_USER
     // Customer's email from the form — used as Reply-To so hitting Reply in
     // Gmail goes straight to the customer, not back to the ClassOne inbox.
     const customerEmail = data['Email ID'] || data['Email'] || data['email'] || ''
