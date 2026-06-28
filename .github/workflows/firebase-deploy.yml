@@ -28,14 +28,26 @@ jobs:
         run: npm run build
 
       # Deploy to the live site on push to main.
+      # Firebase returns HTTP 400 "current active version" when the built output
+      # is byte-for-byte identical to what is already live (e.g. only workflow
+      # or config files changed). We catch that specific error and treat it as a
+      # success — the site is already up to date. All other non-zero exit codes
+      # still fail the job.
       - name: Deploy (live)
         if: github.event_name == 'push'
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CLASSONE }}
-          channelId: live
-          projectId: classone-systems
+        env:
+          FIREBASE_SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CLASSONE }}
+        run: |
+          echo "$FIREBASE_SA" > /tmp/sa.json
+          export GOOGLE_APPLICATION_CREDENTIALS=/tmp/sa.json
+          npx firebase-tools@latest deploy --only hosting --project classone-systems 2>&1 | tee /tmp/deploy.log
+          EXIT=${PIPESTATUS[0]}
+          rm -f /tmp/sa.json
+          if [ $EXIT -ne 0 ] && grep -q "current active version" /tmp/deploy.log; then
+            echo "Site is already up to date — no release needed."
+            exit 0
+          fi
+          exit $EXIT
 
       # Deploy a temporary preview channel for PRs.
       - name: Deploy (PR preview)
