@@ -69,7 +69,10 @@ export default function App() {
     mo.observe(main, { childList: true, subtree: true })
 
     return () => { io.disconnect(); mo.disconnect() }
-  }, [ready])
+    // Re-attach on navigation: switching to/from the admin chrome recreates the
+    // #content node, which would otherwise leave the observer bound to a stale
+    // element and never reveal newly-rendered [data-reveal] content.
+  }, [ready, pathname])
 
   useEffect(() => {
     const onKey = (e) => {
@@ -109,6 +112,20 @@ export default function App() {
 
   const route = resolveRoute(pathname)
   const Page = route.component
+
+  // Admin area (login + dashboard + managers) runs without the public site
+  // chrome — no marketing nav bar, footer, search or floating contact.
+  const isAdminRoute = pathname === '/login' || pathname === '/admin' || pathname.startsWith('/admin/')
+
+  if (isAdminRoute) {
+    return (
+      <div className="app-shell app-shell--admin">
+        <main id="content" className="site-main">
+          {Page ? <Page {...(route.pageProps || {})} onNavigate={navigate} /> : null}
+        </main>
+      </div>
+    )
+  }
 
   return (
     <div className="app-shell">

@@ -1,30 +1,22 @@
-import { useCollection } from '../lib/store'
+import { useCollection, useContent } from '../lib/store'
 import { AppLink } from '../components/common/AppLink'
 import { MediaFrame } from '../components/ui/MediaFrame'
+import { PageBanner } from '../components/common/PageBanner'
 
 export function ResourcesPage({ onNavigate }) {
   const { data: resourceCards } = useCollection('resources')
+  const c = useContent().resources || {}
   return (
     <>
-      <section className="page-banner">
-        <div className="container">
-          <p className="page-banner__eyebrow">Knowledge Base</p>
-          <h1 className="page-banner__title">Resources</h1>
-          <p className="page-banner__summary">Application notes, user guides and tutorials crafted to help researchers get the most from their instruments.</p>
-        </div>
-      </section>
+      <PageBanner eyebrow={c.eyebrow} title={c.title} summary={c.summary} />
 
       <section className="section">
         <div className="container resources-intro">
           <div>
-            <p className="sh__eyebrow">Get Started</p>
-            <h2 className="sh__title">Learning and Training</h2>
+            <p className="sh__kicker"><span className="sh__eyebrow">{c.introEyebrow}</span></p>
+            <h2 className="sh__title">{c.introTitle}</h2>
           </div>
-          <p className="resources-intro__text">
-            Access a comprehensive suite of resources — including application notes, user guides, and tutorials —
-            crafted to support researchers, engineers, and innovators in maximizing the performance and value of
-            their scientific instruments.
-          </p>
+          <p className="resources-intro__text">{c.introBody}</p>
         </div>
       </section>
 

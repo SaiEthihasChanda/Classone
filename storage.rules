@@ -1,0 +1,23 @@
+rules_version = '2';
+
+// Uploaded images are public marketing assets.
+//   • Anyone may READ.
+//   • Any SIGNED-IN account may upload images (<10 MB) and delete/move them.
+//
+// There is no public sign-up — accounts are provisioned only by the super admin
+// from the dashboard — so in practice "signed in" means an admin. Storage rules
+// run in isolation and can't reliably read the Firestore /admins allow-list
+// (cross-service lookups aren't available here), so authorisation is by an
+// authenticated session. The actual content (which references these images) is
+// still admin-gated by the Firestore rules.
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read: if true;
+      allow create, update: if request.auth != null
+        && request.resource.size < 10 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+      allow delete: if request.auth != null;
+    }
+  }
+}

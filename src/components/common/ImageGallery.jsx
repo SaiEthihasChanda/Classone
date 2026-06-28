@@ -1,20 +1,22 @@
 import { useState } from 'react'
 import { ChevronLeft, ChevronRight } from '../ui/Icons'
+import { adjustStyle, findAdjust, aspectStyle } from '../../lib/imageAdjust'
 
 /** Product image gallery with thumbnail strip. */
-export function ImageGallery({ images = [], title = '' }) {
+export function ImageGallery({ images = [], title = '', adjust = [], ratio }) {
   const [active, setActive] = useState(0)
 
   if (!images.length) return (
     <div className="img-gallery img-gallery--empty">
-      <div className="img-gallery__placeholder" aria-hidden="true" />
+      <div className="img-gallery__placeholder" aria-hidden="true" style={aspectStyle(ratio)} />
     </div>
   )
 
   return (
     <div className="img-gallery">
-      <div className="img-gallery__main">
-        <img src={images[active]} alt={`${title} — image ${active + 1}`} loading="eager" />
+      <div className="img-gallery__main" style={aspectStyle(ratio)}>
+        <img src={images[active]} alt={`${title} — image ${active + 1}`} loading="eager"
+          style={adjustStyle(findAdjust(adjust, images[active]))} />
         {images.length > 1 && <>
           <button className="img-gallery__arrow img-gallery__arrow--prev" onClick={() => setActive(i => (i - 1 + images.length) % images.length)} aria-label="Previous image">
             <ChevronLeft />

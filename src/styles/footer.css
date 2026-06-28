@@ -4,15 +4,15 @@
 
 .site-footer {
   position: relative;
-  background: linear-gradient(180deg, #0a3257 0%, #08294a 100%);
-  color: rgba(255,255,255,0.7);
+  background: var(--surface);
+  color: var(--text-sub);
 }
 
 /* ─── Pre-footer CTA strip ──── */
 .prefooter {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(150deg, #0d3a63 0%, #114a78 100%);
+  background: var(--ink);
   padding-block: var(--sp-10);
 }
 .prefooter::before {
@@ -38,14 +38,14 @@
   align-items: center;
   gap: var(--sp-4);
   padding: var(--sp-5) var(--sp-6);
-  background: rgba(255,255,255,0.05);
+  background: rgba(var(--paper-rgb),0.07);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(var(--paper-rgb),0.14);
   text-decoration: none;
-  color: #fff;
+  color: var(--paper);
   transition: background var(--ease-base);
 }
-.prefooter-card:hover { background: rgba(255,255,255,0.1); }
+.prefooter-card:hover { background: rgba(var(--paper-rgb),0.14); }
 .prefooter-card__icon {
   width: 44px; height: 44px;
   display: flex; align-items: center; justify-content: center;
@@ -53,12 +53,19 @@
   flex-shrink: 0;
 }
 .prefooter-card__icon svg { width: 24px; height: 24px; }
-.prefooter-card__icon--green { background: rgba(37, 211, 102, 0.15); color: #25d366; }
-.prefooter-card__icon--blue  { background: rgba(26, 154, 181, 0.2);  color: var(--brand-primary); }
+/* WhatsApp + mail keep their real brand colours (not the site theme). */
+.prefooter-card__icon--green { background: #ffffff; color: #25d366; }
+.prefooter-card__icon--blue  { background: #ffffff; color: #1a73e8; }
+.prefooter-card__icon--gmail { background: #ffffff; }
+/* Gmail's logo is wider than tall — let it keep its aspect (don't squash into a
+   square) so it sits balanced next to the square WhatsApp glyph. */
+.prefooter-card__icon--gmail svg { width: 26px; height: auto; }
 .prefooter-card > div { flex: 1; }
-.prefooter-card strong { display: block; font-size: var(--text-base); font-weight: 700; color: #fff; }
-.prefooter-card span  { display: block; font-size: var(--text-sm); color: rgba(255,255,255,0.6); margin-top: 2px; }
-.prefooter-card__arrow { color: rgba(255,255,255,0.4); }
+.prefooter-card strong { display: block; font-size: var(--text-base); font-weight: 700; color: var(--paper); }
+/* Scope to the description text only — a bare `span` selector also caught the
+   icon <span>, recolouring the WhatsApp glyph (currentColor) to faded paper. */
+.prefooter-card > div span { display: block; font-size: var(--text-sm); color: rgba(var(--paper-rgb),0.6); margin-top: 2px; }
+.prefooter-card__arrow { color: rgba(var(--paper-rgb),0.4); }
 
 /* ─── Main footer grid ──── */
 .footer-main { padding-block: var(--sp-16); }
@@ -76,10 +83,10 @@
 
 /* Brand column */
 .footer-col {}
-.footer-logo { height: 44px; width: auto; margin-bottom: var(--sp-4); }
+.footer-logo { height: 88px; width: auto; margin-bottom: var(--sp-4); }
 .footer-tagline {
   font-size: var(--text-sm);
-  color: rgba(255,255,255,0.55);
+  color: var(--text-muted);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--sp-6);
   max-width: 280px;
@@ -89,11 +96,11 @@
   width: 36px; height: 36px;
   display: flex; align-items: center; justify-content: center;
   border-radius: var(--radius-sm);
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.55);
+  background: var(--surface-sub);
+  color: var(--text-sub);
   transition: background var(--ease-fast), color var(--ease-fast);
 }
-.footer-social:hover { background: var(--brand-primary); color: #fff; }
+.footer-social:hover { background: var(--brand-primary); color: var(--paper); }
 .footer-social svg { width: 16px; height: 16px; }
 
 /* Link columns */
@@ -102,17 +109,17 @@
   font-weight: 700;
   letter-spacing: var(--tracking-widest);
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
+  color: var(--text-muted);
   margin-bottom: var(--sp-5);
 }
 .footer-links { display: flex; flex-direction: column; gap: var(--sp-3); }
 .footer-link {
   font-size: var(--text-sm);
-  color: rgba(255,255,255,0.6);
+  color: var(--text-sub);
   text-decoration: none;
   transition: color var(--ease-fast);
 }
-.footer-link:hover { color: #fff; }
+.footer-link:hover { color: var(--brand-primary); }
 .footer-all-link {
   display: inline-block;
   margin-top: var(--sp-4);
@@ -121,7 +128,7 @@
   color: var(--brand-primary);
   text-decoration: none;
 }
-.footer-all-link:hover { color: #fff; }
+.footer-all-link:hover { color: var(--brand-primary-dark); }
 
 /* Contact column */
 .footer-contact { display: flex; flex-direction: column; gap: var(--sp-4); }
@@ -130,16 +137,16 @@
   gap: var(--sp-3);
   align-items: flex-start;
   font-size: var(--text-sm);
-  color: rgba(255,255,255,0.6);
+  color: var(--text-sub);
   text-decoration: none;
   transition: color var(--ease-fast);
 }
-.footer-contact__item:hover { color: #fff; }
+.footer-contact__item:hover { color: var(--brand-primary); }
 .footer-contact__icon { width: 16px; height: 16px; flex-shrink: 0; margin-top: 2px; color: var(--brand-primary); }
 
 /* Bottom bar */
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid var(--border);
   padding-block: var(--sp-5);
 }
 .footer-bottom__inner {
@@ -149,11 +156,11 @@
   gap: var(--sp-4);
   flex-wrap: wrap;
   font-size: var(--text-xs);
-  color: rgba(255,255,255,0.35);
+  color: var(--text-muted);
 }
 .footer-bottom__link {
-  color: rgba(255,255,255,0.35);
+  color: var(--text-muted);
   text-decoration: none;
   transition: color var(--ease-fast);
 }
-.footer-bottom__link:hover { color: rgba(255,255,255,0.7); }
+.footer-bottom__link:hover { color: var(--text); }

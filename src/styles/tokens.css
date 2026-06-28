@@ -4,61 +4,77 @@
    ============================================================ */
 
 :root {
-  /* ── Brand palette ── */
-  --brand-primary:      #1a9ab5;
-  --brand-primary-dark: #0f7a91;
-  --brand-primary-light:#e8f6fa;
-  --brand-accent:       #43d3c4;   /* bright aqua — gradient partner */
-  --brand-accent-2:     #5fb8ff;   /* electric blue — aurora partner */
-  --brand-navy:         #0c1e2e;
-  --brand-navy-mid:     #14293c;
-  --brand-navy-soft:    #1d3448;
-  --brand-navy-deep:    #07151f;   /* near-black base for dark sections */
+  /* Force light mode everywhere — the app is designed light-only, so never let
+     the device's dark setting recolor native UI (inputs, selects, scrollbars,
+     autofill, date pickers). `only light` hard-opts-out of dark entirely. */
+  color-scheme: only light;
 
-  /* ── Blue scale (blue-forward direction) ── */
-  --blue-950: #08294a;
-  --blue-900: #0d3a63;
-  --blue-800: #114a78;
-  --blue-700: #155a8d;
-  --blue-600: #1d6fa6;
-  --blue-500: #2389c4;
-  --blue-400: #4aa6da;
-  --blue-300: #86c8ea;
-  --blue-200: #bce0f4;
-  --blue-100: #e1f0fa;
-  --blue-50:  #eef6fc;
+  /* ── TWO-COLOR SYSTEM ───────────────────────────────────────
+     The entire site uses exactly two colors: deep navy "ink" and
+     light blue "paper". For hierarchy (muted text, borders, hovers,
+     shadows) we only ever use INK at reduced opacity over paper —
+     never a third hue. Inverted/"dark" sections are solid ink with
+     paper-coloured text. Change these two values to recolor the site. */
+  --ink:       #16265c;            /* navy — text, icons, lines, dark fills */
+  --ink-rgb:   22, 38, 92;
+  --paper:     #dce4f2;            /* light blue — page + every surface */
+  --paper-rgb: 220, 228, 242;
 
-  /* ── Neutral scale ── */
-  --gray-50:  #f9fafb;
-  --gray-100: #f3f4f6;
-  --gray-200: #e5e7eb;
-  --gray-300: #d1d5db;
-  --gray-400: #9ca3af;
-  --gray-500: #6b7280;
-  --gray-600: #4b5563;
-  --gray-700: #374151;
-  --gray-800: #1f2937;
-  --gray-900: #111827;
+  /* Brand aliases (components reference these) → all resolve to the two colors. */
+  --brand-primary:      var(--ink);
+  --brand-primary-dark: var(--ink);
+  --brand-primary-light:var(--paper);
+  --brand-accent:       var(--ink);
+  --brand-accent-2:     var(--ink);
+  --brand-navy:         var(--ink);
+  --brand-navy-mid:     var(--ink);
+  --brand-navy-soft:    var(--ink);
+  --brand-navy-deep:    var(--ink);
 
-  /* ── Semantic surface tokens (blue-tinted neutrals) ── */
-  --bg:           #f4f8fc;
-  --surface:      #ffffff;
-  --surface-sub:  #eef5fb;
-  --surface-blue: #e7f1fa;
-  --surface-dark: #0c1e2e;
-  --border:       #dbe7f1;
-  --border-strong:#bcd2e3;
+  /* Blue scale collapses onto the two colors (dark steps → ink, light → paper). */
+  --blue-950: var(--ink);
+  --blue-900: var(--ink);
+  --blue-800: var(--ink);
+  --blue-700: var(--ink);
+  --blue-600: var(--ink);
+  --blue-500: var(--ink);
+  --blue-400: rgba(var(--ink-rgb), 0.55);
+  --blue-300: rgba(var(--ink-rgb), 0.32);
+  --blue-200: rgba(var(--ink-rgb), 0.16);
+  --blue-100: var(--paper);
+  --blue-50:  var(--paper);
 
-  /* ── Semantic text tokens ── */
-  --text:         #111827;
-  --text-sub:     #4b5563;
-  --text-muted:   #6b7280;
-  --text-inverse: #ffffff;
-  --text-brand:   #1a9ab5;
+  /* ── Neutral scale → ink at opacity over paper ── */
+  --gray-50:  var(--paper);
+  --gray-100: rgba(var(--ink-rgb), 0.05);
+  --gray-200: rgba(var(--ink-rgb), 0.12);
+  --gray-300: rgba(var(--ink-rgb), 0.20);
+  --gray-400: rgba(var(--ink-rgb), 0.40);
+  --gray-500: rgba(var(--ink-rgb), 0.55);
+  --gray-600: rgba(var(--ink-rgb), 0.70);
+  --gray-700: rgba(var(--ink-rgb), 0.82);
+  --gray-800: rgba(var(--ink-rgb), 0.90);
+  --gray-900: var(--ink);
 
-  /* ── Semantic interactive tokens ── */
-  --focus-ring: 0 0 0 3px rgba(26, 154, 181, 0.35);
-  --link-color: #1a9ab5;
+  /* ── Semantic surfaces ── */
+  --bg:           var(--paper);
+  --surface:      var(--paper);
+  --surface-sub:  rgba(var(--ink-rgb), 0.05);
+  --surface-blue: rgba(var(--ink-rgb), 0.08);
+  --surface-dark: var(--ink);
+  --border:       rgba(var(--ink-rgb), 0.18);
+  --border-strong:rgba(var(--ink-rgb), 0.32);
+
+  /* ── Semantic text ── */
+  --text:         var(--ink);
+  --text-sub:     rgba(var(--ink-rgb), 0.78);
+  --text-muted:   rgba(var(--ink-rgb), 0.55);
+  --text-inverse: var(--paper);
+  --text-brand:   var(--ink);
+
+  /* ── Interactive ── */
+  --focus-ring: 0 0 0 3px rgba(var(--ink-rgb), 0.35);
+  --link-color: var(--ink);
 
   /* ── Spacing (4px grid) ── */
   --sp-1:   4px;
@@ -77,8 +93,9 @@
   --sp-32: 128px;
 
   /* ── Typography ── */
-  --font-sans:    'Cabin', system-ui, sans-serif;
-  --font-display: 'Roboto', system-ui, sans-serif;
+  --font-sans:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-mono:    'Space Mono', ui-monospace, 'SFMono-Regular', monospace;
 
   --text-xs:   0.75rem;   /* 12px */
   --text-sm:   0.875rem;  /* 14px */
@@ -112,35 +129,34 @@
   --radius-full: 9999px;
 
   /* ── Shadows ── */
-  --shadow-xs:  0 1px 2px rgba(0,0,0,0.05);
-  --shadow-sm:  0 2px 6px rgba(12,30,46,0.06), 0 1px 2px rgba(12,30,46,0.04);
-  --shadow-md:  0 6px 20px rgba(12,30,46,0.09), 0 2px 6px rgba(12,30,46,0.05);
-  --shadow-lg:  0 14px 40px rgba(12,30,46,0.12), 0 5px 12px rgba(12,30,46,0.06);
-  --shadow-xl:  0 28px 70px rgba(12,30,46,0.16), 0 10px 22px rgba(12,30,46,0.08);
-  --shadow-brand: 0 10px 30px rgba(26, 154, 181, 0.32);
-  --shadow-glow:  0 0 0 1px rgba(26,154,181,0.25), 0 14px 40px -8px rgba(26,154,181,0.45);
+  --shadow-xs:  0 1px 2px rgba(var(--ink-rgb),0.06);
+  --shadow-sm:  0 2px 6px rgba(var(--ink-rgb),0.08), 0 1px 2px rgba(var(--ink-rgb),0.05);
+  --shadow-md:  0 6px 20px rgba(var(--ink-rgb),0.10), 0 2px 6px rgba(var(--ink-rgb),0.06);
+  --shadow-lg:  0 14px 40px rgba(var(--ink-rgb),0.14), 0 5px 12px rgba(var(--ink-rgb),0.07);
+  --shadow-xl:  0 28px 70px rgba(var(--ink-rgb),0.18), 0 10px 22px rgba(var(--ink-rgb),0.09);
+  --shadow-brand: 0 10px 30px rgba(var(--ink-rgb), 0.28);
+  --shadow-glow:  0 0 0 1px rgba(var(--ink-rgb),0.25), 0 14px 40px -8px rgba(var(--ink-rgb),0.40);
 
-  /* ── Gradients ── */
-  --grad-brand:   linear-gradient(120deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
-  --grad-brand-soft: linear-gradient(120deg, #1a9ab5 0%, #2bb6c9 50%, #43d3c4 100%);
-  /* "navy" sections are now a vibrant blue→teal gradient (less black) */
-  --grad-navy:    linear-gradient(150deg, #08294a 0%, #0f456f 45%, #1d6fa6 100%);
-  --grad-blue:    linear-gradient(150deg, #0d3a63 0%, #1d6fa6 55%, #2bb6c9 100%);
-  --grad-text:    linear-gradient(100deg, #1a9ab5 0%, #43d3c4 60%, #5fb8ff 100%);
-  --grad-sheen:   linear-gradient(110deg, transparent 20%, rgba(255,255,255,0.45) 50%, transparent 80%);
-  /* light, airy hero / surface washes */
-  --grad-hero:    linear-gradient(165deg, #ffffff 0%, #eaf4fb 42%, #d6ebf7 100%);
-  --grad-surface-blue: linear-gradient(180deg, #f3f9fd 0%, #e8f3fb 100%);
+  /* ── Gradients (two colours only) ──
+     Dark/brand/navy gradients are solid ink; light washes are solid paper.
+     Keeping the gradient syntax means components need no structural change. */
+  --grad-brand:   linear-gradient(120deg, var(--ink) 0%, var(--ink) 100%);
+  --grad-brand-soft: linear-gradient(120deg, var(--ink) 0%, var(--ink) 100%);
+  --grad-navy:    linear-gradient(150deg, var(--ink) 0%, var(--ink) 100%);
+  --grad-blue:    linear-gradient(150deg, var(--ink) 0%, var(--ink) 100%);
+  --grad-text:    linear-gradient(100deg, var(--ink), var(--ink));
+  --grad-sheen:   linear-gradient(110deg, transparent 20%, rgba(var(--paper-rgb),0.55) 50%, transparent 80%);
+  --grad-hero:    linear-gradient(165deg, var(--paper) 0%, var(--paper) 100%);
+  --grad-surface-blue: linear-gradient(180deg, var(--paper) 0%, var(--paper) 100%);
 
-  /* ── Glow color stops (aurora) ── */
-  --glow-teal:  rgba(26,154,181,0.55);
-  --glow-aqua:  rgba(67,211,196,0.45);
-  --glow-blue:  rgba(95,184,255,0.45);
-  --glow-sky:   rgba(120,196,234,0.55);
-  /* lighter glows for use on light backgrounds */
-  --glow-teal-l: rgba(26,154,181,0.30);
-  --glow-blue-l: rgba(95,184,255,0.32);
-  --glow-aqua-l: rgba(67,211,196,0.28);
+  /* ── Glow stops (aurora over ink) → paper-tinted lifts; light variants are ink ── */
+  --glow-teal:  rgba(var(--paper-rgb),0.18);
+  --glow-aqua:  rgba(var(--paper-rgb),0.14);
+  --glow-blue:  rgba(var(--paper-rgb),0.16);
+  --glow-sky:   rgba(var(--paper-rgb),0.22);
+  --glow-teal-l: rgba(var(--ink-rgb),0.10);
+  --glow-blue-l: rgba(var(--ink-rgb),0.10);
+  --glow-aqua-l: rgba(var(--ink-rgb),0.08);
 
   /* ── Transitions ── */
   --ease-fast:   150ms ease;
@@ -153,5 +169,5 @@
   --container-sm:   900px;
   --container-wide: 1440px;
   --section-y:      var(--sp-20);
-  --header-h:       72px;
+  --header-h:       112px;
 }

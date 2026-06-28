@@ -1,20 +1,15 @@
-import { useCollection } from '../lib/store'
+import { useCollection, useContent } from '../lib/store'
 import { SectionHeading } from '../components/common/SectionHeading'
+import { PageBanner } from '../components/common/PageBanner'
 
 export function EventPage() {
   const { data: events } = useCollection('events')
+  const c = useContent().event || {}
   const page = events[0] || {}
 
   return (
     <>
-      {/* Hero */}
-      <section className="page-banner">
-        <div className="container">
-          <p className="page-banner__eyebrow">Highlights</p>
-          <h1 className="page-banner__title">{page.title || 'Events'}</h1>
-          {page.subtitle && <p className="page-banner__summary">{page.subtitle}</p>}
-        </div>
-      </section>
+      <PageBanner eyebrow={c.eyebrow} title={page.title || 'Events'} summary={page.subtitle} />
 
       {/* Sections */}
       {page.sections && page.sections.map((sec, i) => (
@@ -30,7 +25,7 @@ export function EventPage() {
       {page.gallery && page.gallery.length > 0 && (
         <section className="section section--alt">
           <div className="container">
-            <SectionHeading title="Gallery" align="center" />
+            <SectionHeading title={c.galleryTitle || 'Gallery'} align="center" />
             <div className="event-gallery">
               {page.gallery.map(item => (
                 <div className="event-gallery__item" key={item.src}>

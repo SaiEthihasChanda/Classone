@@ -1,18 +1,14 @@
-import { useCollection } from '../lib/store'
+import { useCollection, useContent } from '../lib/store'
 import { AppLink } from '../components/common/AppLink'
 import { MediaFrame } from '../components/ui/MediaFrame'
+import { PageBanner } from '../components/common/PageBanner'
 
 export function SoftwarePage({ onNavigate }) {
   const { data: softwareCards } = useCollection('software')
+  const c = useContent().software || {}
   return (
     <>
-      <section className="page-banner">
-        <div className="container">
-          <p className="page-banner__eyebrow">Software</p>
-          <h1 className="page-banner__title">Software Overview</h1>
-          <p className="page-banner__summary">Control your potentiostat with your PC, phone, or tablet — one ecosystem across every instrument.</p>
-        </div>
-      </section>
+      <PageBanner eyebrow={c.eyebrow} title={c.title} summary={c.summary} />
 
       <section className="section">
         <div className="container">

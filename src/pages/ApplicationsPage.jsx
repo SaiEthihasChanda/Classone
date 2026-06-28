@@ -1,12 +1,14 @@
 import { useState } from 'react'
-import { useCollection } from '../lib/store'
+import { useCollection, useContent } from '../lib/store'
+import { PageBanner } from '../components/common/PageBanner'
 
 export function ApplicationsPage() {
   const { data: applicationCards } = useCollection('applications')
+  const c = useContent().applications || {}
   const [active, setActive] = useState(0)
   const tab = applicationCards[active] ?? applicationCards[0]
 
-  if (!tab) return <section className="page-banner"><div className="container"><h1 className="page-banner__title">Applications</h1></div></section>
+  if (!tab) return <PageBanner title={c.title || 'Applications'} />
 
   const paras = tab.panelParagraphs || []
   const desc = paras[0]
@@ -15,13 +17,7 @@ export function ApplicationsPage() {
 
   return (
     <>
-      <section className="page-banner">
-        <div className="container">
-          <p className="page-banner__eyebrow">What We Enable</p>
-          <h1 className="page-banner__title">Applications</h1>
-          <p className="page-banner__summary">Real-world electrochemical workflows our instruments power — from corrosion and battery testing to biosensing and education.</p>
-        </div>
-      </section>
+      <PageBanner eyebrow={c.eyebrow} title={c.title} summary={c.summary} />
 
       <section className="section applications-page">
         <div className="container applications-page__inner">

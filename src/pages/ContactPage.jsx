@@ -1,5 +1,6 @@
-import { useSite, useCollection } from '../lib/store'
+import { useSite, useCollection, useContent } from '../lib/store'
 import { SectionHeading } from '../components/common/SectionHeading'
+import { PageBanner } from '../components/common/PageBanner'
 import { Mail, Phone, Whatsapp } from '../components/ui/Icons'
 
 const methodIcon = { whatsapp: <Whatsapp />, email: <Mail />, phone: <Phone /> }
@@ -8,16 +9,10 @@ const methodTone = { whatsapp: 'green', email: 'blue', phone: 'teal' }
 export function ContactPage() {
   const contactMethods = useSite().contactMethods || []
   const { data: contactOffices } = useCollection('offices')
+  const c = useContent().contact || {}
   return (
     <>
-      {/* Hero */}
-      <section className="page-banner">
-        <div className="container">
-          <p className="page-banner__eyebrow">Get In Touch</p>
-          <h1 className="page-banner__title">Contact Us</h1>
-          <p className="page-banner__summary">Reach our team for product enquiries, demos and after-sales support — or visit one of our seven regional offices.</p>
-        </div>
-      </section>
+      <PageBanner eyebrow={c.eyebrow} title={c.title} summary={c.summary} />
 
       {/* Quick contact — driven by the contactMethods entity */}
       <section className="section">
@@ -41,7 +36,7 @@ export function ContactPage() {
       {/* Offices */}
       <section className="section section--alt">
         <div className="container">
-          <SectionHeading eyebrow="LOCATION" title="Find the Office Nearest You" />
+          <SectionHeading eyebrow={c.officesEyebrow} title={c.officesTitle} />
           <div className="office-grid">
             {contactOffices.map((office, i) => (
               <article className="office-card" key={office.title} data-reveal style={{ '--reveal-delay': `${(i % 3) * 60}ms` }}>

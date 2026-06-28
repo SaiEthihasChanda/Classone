@@ -1,0 +1,87 @@
+rules_version = '2';
+
+// Class One Systems — public marketing content.
+//
+// Access model (no backend / Cloud Functions):
+//   • Anyone may READ public content.
+//   • A signed-in admin (their lowercased email has a doc in /admins) may
+//     CREATE and UPDATE content. "Delete" in the app is a soft delete, i.e. an
+//     UPDATE that sets deleted=true — so admins never hard-delete.
+//   • Only the SUPER admin may hard-delete documents (permanent purge) and
+//     manage the /admins allow-list and /archivedImages recovery records.
+//
+// The super admin is fixed to a single email. The allow-list is the security
+// boundary (custom claims are no longer required).
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn()  { return request.auth != null; }
+    function userEmail() { return request.auth.token.email; }
+    function isSuper()   { return signedIn() && userEmail() == 'saiethihaschanda@gmail.com'; }
+    function isAdmin() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/admins/$(userEmail()));
+    }
+
+    // ── Admin allow-list ────────────────────────────────────────
+    // Doc id = the admin's lowercased email. Only the super admin manages it;
+    // an admin may read their own entry (used by the sign-in gate).
+    match /admins/{email} {
+      allow get:    if signedIn() && (userEmail() == email || isSuper());
+      allow list:   if isSuper();
+      allow create, delete: if isSuper();
+      // Super admin may edit anyone. An admin may edit only their OWN profile
+      // fields (preferred name / photo) — role and email must stay unchanged,
+      // so they can never escalate themselves.
+      allow update: if isSuper()
+        || (signedIn() && userEmail() == email
+            && request.resource.data.role == resource.data.role
+            && request.resource.data.email == resource.data.email);
+    }
+
+    // ── Archived images (recovery records) — super admin only ───
+    // Admins create a record when they remove a single gallery/thumbnail image
+    // (the bytes move to archive/ in Storage). Only the super admin reads,
+    // restores (delete record) or purges them.
+    match /archivedImages/{id} {
+      allow read:   if isSuper();
+      allow create: if isAdmin();
+      allow update, delete: if isSuper();
+    }
+
+    // ── Nested product catalog ──────────────────────────────────
+    // Product docs are PATH-encoded by group/category, so moving a product to
+    // another menu must delete the old doc and recreate it elsewhere. That makes
+    // delete a normal admin operation here. User-facing "delete" still goes
+    // through the app's soft-delete; permanent purge is a super-only UI action.
+    match /catalog/{document=**} {
+      allow read:   if true;
+      allow create, update, delete: if isAdmin();
+    }
+    // Authorise collectionGroup('products') / collectionGroup('categories')
+    // queries (a group query needs a rule matching the group at ANY path).
+    match /{path=**}/products/{productId} {
+      allow read:   if true;
+      allow create, update, delete: if isAdmin();
+    }
+    match /{path=**}/categories/{categoryId} {
+      allow read:   if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // ── Enquiry submissions ─────────────────────────────────────────
+    // Anyone (including unauthenticated visitors) may submit an enquiry.
+    // Only admins may read or manage submissions.
+    match /enquiries/{docId} {
+      allow create: if true;
+      allow read, update, delete: if isAdmin();
+    }
+
+    // ── Everything else (top-level content collections + singletons) ──
+    match /{collection}/{docId} {
+      allow read:   if true;
+      allow create, update: if isAdmin();
+      allow delete: if isSuper();
+    }
+  }
+}

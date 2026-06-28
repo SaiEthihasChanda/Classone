@@ -1,22 +1,19 @@
-import { useSettings } from '../lib/store'
+import { useSettings, useContent, useSite } from '../lib/store'
 import { MediaFrame } from '../components/ui/MediaFrame'
 import { SectionHeading } from '../components/common/SectionHeading'
+import { PageBanner } from '../components/common/PageBanner'
 
 export function AboutPage() {
   const settings = useSettings()
+  const site = useSite()
+  const c = useContent().about || {}
   const imageAssets = settings.assets || {}
   const about = settings.about || {}
-  const { mission: missionText, vision: visionText, expertise: expertisePoints = [], team: aboutTeam = [], message: aboutMessage } = about
+  const { mission: missionText, vision: visionText, expertise: expertisePoints = [], message: aboutMessage } = about
+  const aboutTeam = site.team || []
   return (
     <>
-      {/* Hero */}
-      <section className="page-banner">
-        <div className="container">
-          <p className="page-banner__eyebrow">Who We Are</p>
-          <h1 className="page-banner__title">About Us</h1>
-          <p className="page-banner__summary">A Delhi-based leader in nanotechnology, semiconductor and electrochemical analysis systems — serving India's premier research institutions since 2012.</p>
-        </div>
-      </section>
+      <PageBanner eyebrow={c.eyebrow} title={c.title} summary={c.summary} />
 
       {/* Director message */}
       <section className="section">
@@ -25,8 +22,8 @@ export function AboutPage() {
             <MediaFrame src={imageAssets.aboutDirector} alt="Managing Director" aspect="portrait" />
           </div>
           <div className="about-director__copy">
-            <p className="sh__eyebrow">Message from the Director</p>
-            <h2 className="sh__title">Class One Systems S&T Pvt. Ltd.</h2>
+            <p className="sh__kicker"><span className="sh__eyebrow">{c.directorEyebrow}</span></p>
+            <h2 className="sh__title">{c.directorTitle}</h2>
             <p>{aboutMessage}</p>
           </div>
         </div>
@@ -36,31 +33,21 @@ export function AboutPage() {
       <section className="section section--alt">
         <div className="container about-mv">
           <article className="about-mv__card">
-            <SectionHeading eyebrow="Our Mission" title="Mission" summary={missionText} />
-            <p>
-              At <strong>Class One Systems</strong>, our mission is to empower the scientific and research community
-              with advanced, reliable, and accessible electrochemical and nanotechnology solutions. We strive to bridge
-              the gap between scientific theory and real-world application by providing tools, insights, and hands-on
-              collaboration that accelerate discovery and innovation.
-            </p>
+            <SectionHeading eyebrow={c.missionEyebrow} title={c.missionTitle} summary={missionText} />
+            <p>{c.missionBody}</p>
             <figure className="about-figure">
-              <img src={imageAssets.aboutMission} alt="Exhibition stall inaugurated by Director General CSIR" loading="lazy" />
-              <figcaption>Exhibition Stall inaugurated by Director General CSIR, Dr. N Kalaisalvi</figcaption>
+              <img src={imageAssets.aboutMission} alt={c.missionCaption} loading="lazy" />
+              <figcaption>{c.missionCaption}</figcaption>
             </figure>
           </article>
 
           <article className="about-mv__card">
             <figure className="about-figure about-figure--top">
-              <img src={imageAssets.aboutVision} alt="Rasayana Ratna award" loading="lazy" />
-              <figcaption>First Rasayana Ratna Award given to Director General CSIR, Dr. N Kalaisalvi</figcaption>
+              <img src={imageAssets.aboutVision} alt={c.visionCaption} loading="lazy" />
+              <figcaption>{c.visionCaption}</figcaption>
             </figure>
-            <SectionHeading eyebrow="Our Vision" title="Vision" summary={visionText} />
-            <p>
-              We envision a future where scientific research is accelerated by access to cutting-edge tools, open
-              knowledge systems, and collaborative ecosystems that transcend lab walls. By fostering innovation both
-              inside and outside the lab, we aim to shape a dynamic and inclusive scientific future that enables
-              groundbreaking discoveries, sustainable technologies, and human advancement.
-            </p>
+            <SectionHeading eyebrow={c.visionEyebrow} title={c.visionTitle} summary={visionText} />
+            <p>{c.visionBody}</p>
           </article>
         </div>
       </section>
@@ -68,11 +55,7 @@ export function AboutPage() {
       {/* Expertise */}
       <section className="section">
         <div className="container">
-          <SectionHeading
-            eyebrow="Areas of Expertise"
-            title="Our Core Expertise"
-            summary="At Class One Systems, we specialize in cutting-edge technologies and solutions that serve academic, research, and industrial institutions across India."
-          />
+          <SectionHeading eyebrow={c.expertiseEyebrow} title={c.expertiseTitle} summary={c.expertiseSummary} />
           <div className="expertise-grid">
             {expertisePoints.map((item, i) => (
               <article className="expertise-card" key={item.title} data-reveal style={{ '--reveal-delay': `${(i % 3) * 60}ms` }}>
@@ -87,11 +70,7 @@ export function AboutPage() {
       {/* Team */}
       <section className="section section--alt">
         <div className="container">
-          <SectionHeading
-            eyebrow="Our Team"
-            title="Meet the Team"
-            summary="A dynamic team of dedicated professionals and researchers empowering innovation in electrochemical and nanotechnology solutions."
-          />
+          <SectionHeading eyebrow={c.teamEyebrow} title={c.teamTitle} summary={c.teamSummary} />
           <figure className="team-group-photo">
             <img src={imageAssets.teamGroup} alt="Class One Systems team" loading="lazy" />
           </figure>

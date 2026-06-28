@@ -1,29 +1,17 @@
 import { useSettings } from '../../lib/store'
 import { AppLink } from '../common/AppLink'
-import { Mail, MapPin, Facebook, Twitter, Youtube, Whatsapp, ArrowRight } from '../ui/Icons'
+import { Mail, Gmail, MapPin, Facebook, Twitter, Youtube, Whatsapp, ArrowRight } from '../ui/Icons'
 
-const quickLinks = [
-  { label: 'Home',         href: '/' },
-  { label: 'About Us',     href: '/about' },
-  { label: 'Software',     href: '/software' },
-  { label: 'Resources',    href: '/resources' },
-  { label: 'Applications', href: '/applications' },
-  { label: 'Contact Us',   href: '/contact' },
-  { label: 'News',         href: '/news' },
-]
-
-const footerProducts = [
-  { label: 'Nexus',            href: '/product/nexus' },
-  { label: 'PalmSens4',        href: '/product/palmsens4' },
-  { label: 'EmStat4S',         href: '/product/emstat4s' },
-  { label: 'Sensit Wearable',  href: '/product/sensit-wearable' },
-  { label: 'EmStat Go',        href: '/product/emstat-go' },
-]
+const SOCIAL_ICON = { facebook: Facebook, twitter: Twitter, youtube: Youtube }
 
 export function Footer({ onNavigate }) {
   const settings = useSettings()
   const contact = settings.contact || {}
   const imageAssets = settings.assets || {}
+  const footer = settings.footer || {}
+  const quickLinks = footer.quickLinks || []
+  const footerProducts = footer.products || []
+  const socials = footer.socials || []
   return (
     <footer className="site-footer">
       {/* ── Pre-footer CTA strip ── */}
@@ -38,7 +26,7 @@ export function Footer({ onNavigate }) {
             <ArrowRight className="prefooter-card__arrow" />
           </a>
           <a className="prefooter-card" href={`mailto:${contact.email}`}>
-            <span className="prefooter-card__icon prefooter-card__icon--blue"><Mail /></span>
+            <span className="prefooter-card__icon prefooter-card__icon--gmail"><Gmail /></span>
             <div>
               <strong>Email Us</strong>
               <span>Usually respond within a business day</span>
@@ -54,13 +42,14 @@ export function Footer({ onNavigate }) {
           {/* Brand column */}
           <div className="footer-col footer-col--brand">
             <img src={imageAssets.logo} alt="Class One Systems" className="footer-logo" loading="lazy" />
-            <p className="footer-tagline">
-              Advanced electrochemical instruments and solutions for biosensor and battery research.
-            </p>
+            <p className="footer-tagline">{footer.tagline}</p>
             <div className="footer-socials">
-              <a href="https://www.facebook.com/Class-One-Systems-ST-Pvt-Ltd-104121998557239" target="_blank" rel="noreferrer" aria-label="Facebook" className="footer-social"><Facebook /></a>
-              <a href="https://twitter.com/class_pvt" target="_blank" rel="noreferrer" aria-label="Twitter" className="footer-social"><Twitter /></a>
-              <a href="https://www.youtube.com/channel/UCz4hk9KnO4n1yNkIKoKHIqA" target="_blank" rel="noreferrer" aria-label="YouTube" className="footer-social"><Youtube /></a>
+              {socials.map(s => {
+                const Icon = SOCIAL_ICON[s.kind] || Mail
+                return (
+                  <a key={s.kind} href={s.href} target="_blank" rel="noreferrer" aria-label={s.kind} className="footer-social"><Icon /></a>
+                )
+              })}
             </div>
           </div>
 
@@ -111,7 +100,7 @@ export function Footer({ onNavigate }) {
       {/* ── Bottom bar ── */}
       <div className="footer-bottom">
         <div className="container footer-bottom__inner">
-          <p>© {new Date().getFullYear()} Class One Systems S&T Pvt. Ltd. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {footer.copyright}</p>
           <AppLink href="/enquiry" onNavigate={onNavigate} className="footer-bottom__link">Terms &amp; Conditions</AppLink>
         </div>
       </div>
